@@ -7,3 +7,4 @@ TP2Java-Yu-Gi-Oh.iml
 .idea/workspace.xml
 *.class
 *.jar
+.idea/ant.xml

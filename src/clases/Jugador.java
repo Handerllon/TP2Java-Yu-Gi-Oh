@@ -2,7 +2,7 @@ package clases;
 
 import java.util.ArrayList;
 
-import carta.Carta;
+import cartas.Carta;
 
 public class Jugador {
 

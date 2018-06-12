@@ -12,22 +12,22 @@ public class JugadorTest {
     }
 
     @Test
-    public void test02() {
+    public void test02SeColocaUnaCartaMonstruoEnDefensaYLaMismaQuedaEnDefensa() {
         assertTrue(0 == 0);
     }//Colocar un monstruo en posición de defensa
 
     @Test
-    public void test03() {
+    public void test03ColocarCartaMagicaEnCampoBocaAbajoNoActivaEfecto() {
         assertTrue(0 == 0);
     }//Colocar una carta mágica en el campo boca abajo (no activa ningún efecto)
 
     @Test
-    public void test04() {
+    public void test04ColocarCartaTrampaEnCampoBocaAbajoNoActivaEfecto() {
         assertTrue(0 == 0);
     }//Colocar una carta trampa en el campo boca abajo
 
     @Test
-    public void test05() {
+    public void test05MandarUnaCartaAlCementerioSeQuedaEnCementerio() {
         assertTrue(0 == 0);
     }//Mandar una carta al cementerio (sinónimo de destruir) y verificar que estén ahí.
 

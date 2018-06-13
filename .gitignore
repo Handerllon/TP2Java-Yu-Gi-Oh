@@ -8,3 +8,4 @@ TP2Java-Yu-Gi-Oh.iml
 *.class
 *.jar
 .idea/ant.xml
+/bin/

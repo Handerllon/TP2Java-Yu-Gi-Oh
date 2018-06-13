@@ -1,20 +1,20 @@
 package cartas;
 
-public class CartaMounstro extends Carta{
+public class CartaMonstruo extends Carta{
 
 	private int nivel;
-	private int ataque;
-	private int defensa;
+	private int puntosDeAtaque;
+	private int puntosDeDefensa;
 	//Boca arriba o abajo, seguramente haya que cambiarlo a una entidad mas adelante
 	private String estadoDeCarta;
 	private String orientacionDeCarta;
 
-	public CartaMounstro(String unNombre, int unNivel, int unAtaque, int unaDefensa){
+	public CartaMonstruo(String unNombre, int unNivel, int cantPuntosDeAtaque, int cantPuntosDeDefensa){
 		
 		this.nombre = unNombre;
 		this.nivel = unNivel;
-		this.ataque = unAtaque;
-		this.defensa = unaDefensa;
+		this.puntosDeAtaque = cantPuntosDeAtaque;
+		this.puntosDeDefensa = cantPuntosDeDefensa;
 		//Boca abajo
 		this.estadoDeCarta = "BocaAbajo";
 		
@@ -26,5 +26,6 @@ public class CartaMounstro extends Carta{
 		
 	}
 	
+
 	
 }

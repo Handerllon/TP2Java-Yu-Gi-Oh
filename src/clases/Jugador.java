@@ -2,7 +2,9 @@ package clases;
 
 import java.util.ArrayList;
 
+import areaDeJuego.AreaDeJuego;
 import cartas.Carta;
+import cartas.CartaMonstruo;
 
 public class Jugador {
 
@@ -27,6 +29,11 @@ public class Jugador {
 		
 		this.oponente = unOponente;
 		
+	}
+	
+	public void juegaUnaCartaMonstruo (CartaMonstruo unaCartaMonstruo) {
+		
+		areaDeJuego.jugarUnaCartaMonstruo(unaCartaMonstruo);
 	}
 	
 }

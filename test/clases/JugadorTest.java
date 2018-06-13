@@ -2,12 +2,23 @@ package clases;
 
 import org.junit.Test;
 
+import areaDeJuego.AreaDeJuego;
+import cartas.CartaMonstruo;
+
 import static org.junit.Assert.assertTrue;
 
 public class JugadorTest {
 
     @Test
     public void test01SeColocaUnaCartaMonstruoEnAtaqueYLaMismaQuedaEnAtaque() {
+    	
+    	Jugador jugador = new Jugador("Jugador 1");
+    	
+    	CartaMonstruo unaCartaMonstruo = new CartaMonstruo ("Monstruo Malo", 10, 40, 20);
+    	
+    	jugador.juegaUnaCartaMonstruo (unaCartaMonstruo);
+    	 	
+    	
         assertTrue(0 == 0);
     }
 

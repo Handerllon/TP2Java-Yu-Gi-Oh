@@ -16,9 +16,9 @@ public RegionMonstruos() {
 	}
 
 
-public void colocarCartaMonstruo(CartaMonstruo unaCartaMonstruo) {
+public void colocarCarta(CartaMonstruo unaCartaMonstruo) {
 	
-	cartasMonstruos.put(unaCartaMonstruo.obtenerNombreDeCarta(), unaCartaMonstruo);
+	cartasMonstruos.put(unaCartaMonstruo.obtenerNombre(), unaCartaMonstruo);
 	
 	}
 

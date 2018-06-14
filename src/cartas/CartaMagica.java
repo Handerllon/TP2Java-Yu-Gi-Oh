@@ -1,18 +1,26 @@
 package cartas;
 
+import clases.Efecto;
+import clases.EfectoNulo;
 import clases.Orientacion;
 import clases.OrientacionAbajo;
+import clases.OrientacionArriba;
 
-public class CartaTrampa extends Carta{
-	
+public class CartaMagica extends Carta{
+
 	private Orientacion orientacion; 
+	private Efecto efecto;
 	
-	public CartaTrampa (String unNombre){
+	
+	public CartaMagica (String unNombre){
 		
-		nombre = unNombre;
+		this.nombre = unNombre;
+		
 		this.orientacion = new OrientacionAbajo();
 		
+		this.efecto = new EfectoNulo();
 	}
+
 
 	public void ponerBocaAbajo() {
 		
@@ -20,8 +28,16 @@ public class CartaTrampa extends Carta{
 		
 	}
 	
+	public void ponerBocaArriba() {
+		
+		this.orientacion = new OrientacionArriba();
+		
+	}
+
+
 	public boolean estaBocaAbajo() {
 		
 		return this.orientacion instanceof OrientacionAbajo;
 	}
+	
 }

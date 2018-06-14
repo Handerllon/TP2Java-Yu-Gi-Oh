@@ -12,30 +12,30 @@ public class AreaDeJuego {
 	private Cementerio cementerio; 
 	
 
-public AreaDeJuego() {
+	public AreaDeJuego() {
 	
-	this.regionMonstruos = new RegionMonstruos();
+		this.regionMonstruos = new RegionMonstruos();
 
-	this.regionMagicasYTrampas = new RegionMagicasYTrampas();
+		this.regionMagicasYTrampas = new RegionMagicasYTrampas();
 
-	this.regionCampo = new RegionCampo();
+		this.regionCampo = new RegionCampo();
 
-	this.cementerio = new Cementerio ();
-}
-
-public void jugarUnaCarta(CartaMonstruo unaCartaMonstruo) {
-	
-	regionMonstruos.colocarCarta(unaCartaMonstruo);
+		this.cementerio = new Cementerio ();
 	}
 
-public void jugarUnaCarta(CartaMagica unaCartaMagica) {
+	public void jugarUnaCarta(CartaMonstruo unaCartaMonstruo) {
 	
-	regionMagicasYTrampas.colocarCarta(unaCartaMagica);
+		regionMonstruos.colocarCarta(unaCartaMonstruo);
 	}
 
-public void jugarUnaCarta(CartaTrampa unaCartaTrampa) {
+	public void jugarUnaCarta(CartaMagica unaCartaMagica) {
 	
-	regionMagicasYTrampas.colocarCarta(unaCartaTrampa);
+		regionMagicasYTrampas.colocarCarta(unaCartaMagica);
+	}
+
+	public void jugarUnaCarta(CartaTrampa unaCartaTrampa) {
+	
+		regionMagicasYTrampas.colocarCarta(unaCartaTrampa);
 	}
 
 }

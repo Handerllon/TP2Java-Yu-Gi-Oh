@@ -9,17 +9,16 @@ public class RegionMonstruos {
 	private HashMap <String, CartaMonstruo> cartasMonstruos;
 	
 
-public RegionMonstruos() {
+	public RegionMonstruos() {
 	
-	cartasMonstruos = new HashMap <String, CartaMonstruo>();
+		cartasMonstruos = new HashMap <String, CartaMonstruo>();
 
 	}
 
 
-public void colocarCarta(CartaMonstruo unaCartaMonstruo) {
+	public void colocarCarta(CartaMonstruo unaCartaMonstruo) {
 	
-	cartasMonstruos.put(unaCartaMonstruo.obtenerNombre(), unaCartaMonstruo);
+		cartasMonstruos.put(unaCartaMonstruo.obtenerNombre(), unaCartaMonstruo);
 	
 	}
-
 }

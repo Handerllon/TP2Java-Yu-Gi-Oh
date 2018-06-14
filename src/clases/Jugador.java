@@ -14,6 +14,7 @@ public class Jugador {
 	private ArrayList<Carta> mazo;
 	private ArrayList<Carta> cartasEnMano;
 	private AreaDeJuego areaDeJuego;
+	private Jugador oponente;
 	
 	public Jugador (String unNombre){
 		
@@ -70,7 +71,10 @@ public class Jugador {
 		
 	}
 
+	public void establecerOponente(Jugador oponente) {
+		
+		this.oponente = oponente;
+		
+	}
 
-	
-	
 }

@@ -11,7 +11,6 @@ public class CartaMonstruo extends Carta{
 	private int puntosDeDefensa;
 	//Boca arriba o abajo, seguramente haya que cambiarlo a una entidad mas adelante
 	private String estadoDeCarta;
-	private String orientacionDeCarta;
 	private Modo modo;
 
 	public CartaMonstruo(String unNombre, int unNivel, int cantPuntosDeAtaque, int cantPuntosDeDefensa){

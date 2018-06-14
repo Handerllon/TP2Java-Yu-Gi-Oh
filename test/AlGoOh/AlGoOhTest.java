@@ -100,6 +100,9 @@ public class AlGoOhTest {
     	jugador2.ponerEnAtaque(unaCartaMonstruo2);
     	jugador2.juegaUnaCarta(unaCartaMonstruo2);
     	
+    	jugador1.establecerOponente(jugador2);
+    	jugador2.establecerOponente(jugador1);
+    	
     	
     	
     	

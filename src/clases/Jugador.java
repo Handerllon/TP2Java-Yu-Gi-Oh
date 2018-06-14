@@ -14,6 +14,8 @@ public class Jugador {
 	private ArrayList<Carta> mazo;
 	private ArrayList<Carta> cartasEnMano;
 	private AreaDeJuego areaDeJuego;
+	//private Jugador oponente;
+	private int puntosDeVida;
 	private Jugador oponente;
 	
 	public Jugador (String unNombre){
@@ -24,6 +26,7 @@ public class Jugador {
 		this.mazo = new ArrayList<Carta>();
 		this.cartasEnMano = new ArrayList<Carta>();
 		this.areaDeJuego = new AreaDeJuego();
+		this.puntosDeVida = 8000;
 		
 	}
 	
@@ -77,4 +80,50 @@ public class Jugador {
 		
 	}
 
+	public void atacar(String nombreDeMonstruoElegidoParaAtacar, String nombreDeMonstruoQueRecibeAtaque){
+		
+		this.oponente.recibirAtaque(this.areaDeJuego,nombreDeMonstruoElegidoParaAtacar,
+				nombreDeMonstruoQueRecibeAtaque);
+		
+	}
+
+	public void recibirAtaque(AreaDeJuego areaDeJuegoOponente, String nombreDeMonstruoElegidoParaAtacar,
+			String nombreDeMonstruoQueRecibeAtaque) {
+		
+		CartaMonstruo cartaEnemiga = areaDeJuegoOponente.obtenerCarta(nombreDeMonstruoElegidoParaAtacar);
+		CartaMonstruo cartaAtacada = this.areaDeJuego.obtenerCarta(nombreDeMonstruoQueRecibeAtaque);
+		
+		posibilidadesDelAtaque(cartaEnemiga, cartaAtacada, areaDeJuegoOponente);
+		
+	}
+
+	private void posibilidadesDelAtaque(CartaMonstruo cartaEnemiga, CartaMonstruo cartaAtacada,
+			AreaDeJuego areaDeJuegoOponente) {
+		
+		if (cartaAtacada.muereAnte(cartaEnemiga)){
+			this.puntosDeVida = this.puntosDeVida - cartaAtacada.verificarDanioAJugador(cartaEnemiga);
+			this.areaDeJuego.mandarCartaAlCementerio(cartaAtacada);
+		}
+		else if(cartaAtacada.tieneMismosCantidadDePuntosQue(cartaEnemiga)){
+			
+			areaDeJuegoOponente.mandarCartaAlCementerio(cartaEnemiga);
+			this.areaDeJuego.mandarCartaAlCementerio(cartaAtacada);
+		}
+		
+		else{
+			areaDeJuegoOponente.mandarCartaAlCementerio(cartaEnemiga);
+		}
+	}
+
+	public boolean cartaEstaEnCementerio(String unNombreDeCarta) {
+		Carta cartaAVerificar = this.areaDeJuego.obtenerCarta(unNombreDeCarta);
+		return this.areaDeJuego.cartaEstaEnElCementerio(cartaAVerificar);
+	}
+
+	public int puntosDeVida() {
+
+		return this.puntosDeVida;
+	}
+		
 }
+

@@ -45,6 +45,30 @@ public class CartaMonstruo extends Carta{
 		return this.modo instanceof ModoDefensa;	
 
 	}
+
+	public boolean muereAnte(CartaMonstruo cartaEnemiga) {
+		if (this.estaEnAtaque())
+			return (this.puntosDeAtaque < cartaEnemiga.obtenerPuntosDeAtaque());
+		else 
+			return (this.puntosDeDefensa <= cartaEnemiga.obtenerPuntosDeAtaque());
+	}
+
+	public int obtenerPuntosDeAtaque() {
+		
+		return this.puntosDeAtaque;
+	}
+
+	public int verificarDanioAJugador(CartaMonstruo cartaEnemiga) {
+		if (this.estaEnDefensa())
+			return 0;
+		else
+			return (cartaEnemiga.obtenerPuntosDeAtaque() - this.puntosDeAtaque);
+	}
+
+	public boolean tieneMismosCantidadDePuntosQue(CartaMonstruo cartaEnemiga) {
+		
+		return (this.puntosDeAtaque == cartaEnemiga.obtenerPuntosDeAtaque());
+	}
 }
 	
 

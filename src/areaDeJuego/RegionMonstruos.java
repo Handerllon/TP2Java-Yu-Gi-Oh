@@ -21,4 +21,10 @@ public class RegionMonstruos {
 		cartasMonstruos.put(unaCartaMonstruo.obtenerNombre(), unaCartaMonstruo);
 	
 	}
+
+
+	public CartaMonstruo buscarCarta(String nombreDeMonstruo) {
+		
+		return cartasMonstruos.get(nombreDeMonstruo);
+	}
 }

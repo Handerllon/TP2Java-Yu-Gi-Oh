@@ -1,9 +1,12 @@
 package areaDeJuego;
 
+import java.util.ArrayList;
+
 import cartas.Carta;
 import cartas.CartaMagica;
 import cartas.CartaMonstruo;
 import cartas.CartaTrampa;
+import clases.Jugador;
 
 public class AreaDeJuego {
 	
@@ -29,9 +32,27 @@ public class AreaDeJuego {
 		regionMonstruos.colocarCarta(unaCartaMonstruo);
 	}
 
-	public void jugarUnaCarta(CartaMagica unaCartaMagica) {
+	public void jugarUnaCarta(CartaMagica unaCartaMagica, Jugador oponente) {
 	
 		regionMagicasYTrampas.colocarCarta(unaCartaMagica);
+		this.efectoAgujeroNegro(oponente);
+	}
+
+	private void efectoAgujeroNegro(Jugador oponente) {
+		
+		if(this.regionMagicasYTrampas.contieneCarta("Agujero Negro")){
+			this.agujeroNegro();
+			oponente.agujeroNegro();
+		}
+	}
+
+	public void agujeroNegro() {
+		
+		ArrayList<CartaMonstruo> cartasMonstruoADestruir = this.regionMonstruos.obtenerMonstruos();
+		for (int x = 0 ; x < cartasMonstruoADestruir.size(); x++){
+			this.mandarCartaAlCementerio(cartasMonstruoADestruir.get(x));
+		}
+		this.regionMonstruos.agujeroNegro();
 	}
 
 	public void jugarUnaCarta(CartaTrampa unaCartaTrampa) {
@@ -50,8 +71,8 @@ public class AreaDeJuego {
 		this.cementerio.colocarCarta(unaCarta);
 	}
 
-	public boolean cartaEstaEnElCementerio (Carta unaCarta){
+	public boolean cartaEstaEnElCementerio (String unNombreDeCarta){
 		
-		return this.cementerio.tieneCarta(unaCarta);
+		return this.cementerio.tieneCarta(unNombreDeCarta);
 	}
 }

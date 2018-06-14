@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import cartas.Carta;
 import cartas.CartaMagica;
+import cartas.CartaMonstruo;
 import cartas.CartaTrampa;
 
 
@@ -29,6 +30,11 @@ public class RegionMagicasYTrampas {
 
 		cartasMagicasYTrampas.put(unaCartaTrampa.obtenerNombre(), unaCartaTrampa);
 		
+	}
+	
+	public boolean contieneCarta(String nombreDeCarta) {
+		
+		return cartasMagicasYTrampas.containsKey(nombreDeCarta);
 	}
 
 }

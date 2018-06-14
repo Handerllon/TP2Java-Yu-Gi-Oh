@@ -80,10 +80,12 @@ public class AlGoOhTest {
     public void test05MandarUnaCartaAlCementerioSeQuedaEnCementerio() {
     	Carta unaCarta = new Carta();
     	Cementerio cementerio = new Cementerio();
+
+    	CartaMonstruo unaCartaMonstruo1 = new CartaMonstruo ("Monstruo Bueno", 1, 1000, 500);
     	
-    	cementerio.colocarCarta(unaCarta);
+    	cementerio.colocarCarta(unaCartaMonstruo1);
     	
-        assertTrue(cementerio.tieneCarta(unaCarta));
+        assertTrue(cementerio.tieneCarta("Monstruo Bueno"));
         
     }
 
@@ -218,7 +220,32 @@ public class AlGoOhTest {
     
     @Test
     public void test06() {
-        assertTrue(0 == 0);
+    	Jugador jugador1 = new Jugador("Jugador 1");
+    	Jugador jugador2 = new Jugador("Jugador 2");
+    	
+    	jugador1.establecerOponente(jugador2);
+    	jugador2.establecerOponente(jugador1);
+    	
+    	CartaMonstruo unaCartaMonstruo1 = new CartaMonstruo ("Monstruo Bueno", 1, 1000, 500);
+    	CartaMonstruo unaCartaMonstruo2 = new CartaMonstruo ("Monstruo Malo", 1, 2000, 800);
+    	CartaMagica unaCartaAgujeroNegro = new CartaMagica ("Agujero Negro");
+    	
+    	jugador1.ponerEnAtaque(unaCartaMonstruo1);
+    	jugador1.juegaUnaCarta(unaCartaMonstruo1);
+    	
+    	jugador2.ponerEnAtaque(unaCartaMonstruo2);
+    	jugador2.juegaUnaCarta(unaCartaMonstruo2);
+    	
+    	jugador1.juegaUnaCarta(unaCartaAgujeroNegro);
+    	
+    	int vidaEsperada = 8000;
+    	
+    	assertEquals (vidaEsperada,jugador1.puntosDeVida());
+    	assertEquals (vidaEsperada,jugador2.puntosDeVida());
+    	
+    	assertTrue(jugador1.cartaEstaEnCementerio("Monstruo Bueno"));
+    	assertTrue(jugador2.cartaEstaEnCementerio("Monstruo Malo"));
+    	
     }/*Colocar monstruos en ambos lados del campo. Colocar Agujero negro boca arriba
             (es decir, se activa el efecto). Verificar que se destruyeron todos los monstruos de
     ambos lados del campo, y que nadie recibió daño alguno.*/

@@ -19,11 +19,14 @@ public void colocarCarta(Carta unaCarta) {
 	
 	}
 
-public boolean tieneCarta(Carta unaCarta) {
-	Carta carta = cartas.get(unaCarta.obtenerNombre());
+public boolean tieneCarta(String unNombreDeCarta) {
+	/*Carta carta = cartas.get(unaCarta.obtenerNombre());
 	if(carta != null)
 		return true;
 	return false;
+	*/
+	
+	return cartas.containsKey(unNombreDeCarta);
 }
 
 

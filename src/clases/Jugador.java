@@ -37,7 +37,7 @@ public class Jugador {
 	
 	public void juegaUnaCarta (CartaMagica unaCartaMagica) {
 		
-		areaDeJuego.jugarUnaCarta(unaCartaMagica);
+		areaDeJuego.jugarUnaCarta(unaCartaMagica,this.oponente);
 	}
 	
 	public void juegaUnaCarta(CartaTrampa unaCartaTrampa) {
@@ -116,13 +116,19 @@ public class Jugador {
 	}
 
 	public boolean cartaEstaEnCementerio(String unNombreDeCarta) {
-		Carta cartaAVerificar = this.areaDeJuego.obtenerCarta(unNombreDeCarta);
-		return this.areaDeJuego.cartaEstaEnElCementerio(cartaAVerificar);
+		//Carta cartaAVerificar = this.areaDeJuego.obtenerCarta(unNombreDeCarta);
+		return this.areaDeJuego.cartaEstaEnElCementerio(unNombreDeCarta);
 	}
 
 	public int puntosDeVida() {
 
 		return this.puntosDeVida;
+	}
+
+	public void agujeroNegro() {
+		
+		this.areaDeJuego.agujeroNegro();
+		
 	}
 		
 }

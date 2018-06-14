@@ -1,6 +1,6 @@
 package cartas;
 
-public class Carta {
+public abstract class Carta {
 	
 	protected String nombre;
 	
@@ -8,7 +8,7 @@ public Carta() {
 	
 }
 	
-public String obtenerNombre() {
+public String obtenerNombreDeCarta() {
 	
 	return nombre;
 }

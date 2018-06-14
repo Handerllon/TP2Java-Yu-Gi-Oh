@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 import areaDeJuego.AreaDeJuego;
 import cartas.Carta;
-import cartas.CartaMagica;
 import cartas.CartaMonstruo;
-import cartas.CartaTrampa;
 
 public class Jugador {
 
 	private String nombre;
 	private ArrayList<Carta> mazo;
 	private ArrayList<Carta> cartasEnMano;
+	private Jugador oponente;
 	private AreaDeJuego areaDeJuego;
 	
 	public Jugador (String unNombre){
@@ -26,51 +25,15 @@ public class Jugador {
 		
 	}
 	
-	public void juegaUnaCarta (CartaMonstruo unaCartaMonstruo) {
+	public void establecerOponente (Jugador unOponente){
 		
-		areaDeJuego.jugarUnaCarta(unaCartaMonstruo);
-	}
-	
-	public void juegaUnaCarta (CartaMagica unaCartaMagica) {
-		
-		areaDeJuego.jugarUnaCarta(unaCartaMagica);
-	}
-	
-	public void juegaUnaCarta(CartaTrampa unaCartaTrampa) {
-		
-		areaDeJuego.jugarUnaCarta(unaCartaTrampa);
+		this.oponente = unOponente;
 		
 	}
 	
-	public void ponerEnAtaque (CartaMonstruo unaCartaMonstruo) {
+	public void juegaUnaCartaMonstruo (CartaMonstruo unaCartaMonstruo) {
 		
-		unaCartaMonstruo.ponerEnAtaque();
+		areaDeJuego.jugarUnaCartaMonstruo(unaCartaMonstruo);
 	}
-	
-	public void ponerEnDefensa (CartaMonstruo unaCartaMonstruo) {
-		
-		unaCartaMonstruo.ponerEnDefensa();
-	}
-
-	public void ponerBocaAbajo(CartaMagica unaCartaMagica) {
-	
-		unaCartaMagica.ponerBocaAbajo();
-		
-	}
-	
-	public void ponerBocaArriba(CartaMagica unaCartaMagica) {
-		
-		unaCartaMagica.ponerBocaArriba();
-		
-	}
-
-	public void ponerBocaAbajo(CartaTrampa unaCartaTrampa) {
-	
-		unaCartaTrampa.ponerBocaAbajo();
-		
-	}
-
-
-	
 	
 }

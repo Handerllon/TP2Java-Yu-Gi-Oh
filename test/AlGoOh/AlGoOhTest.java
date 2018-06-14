@@ -148,14 +148,14 @@ public class AlGoOhTest {
     ambos lados del campo, y que nadie recibió daño alguno.*/
     
     @Test
-    public void test0x() {
+    public void test07() {
         assertTrue(0 == 0);
     }/*Se coloca un monstruo en el campo, se quiere colocar un monstruo de 5 o 6
     estrellas que requiere sacrificio. se verifica que se convocó al monstruo y se
     destruyó el primero.*/
 
     @Test
-    public void test0x() {
+    public void test08() {
         assertTrue(0 == 0);
     }/*Se colocan 2 monstruos en el campo, se quiere colocar un monstruo de 7 o más
     estrellas que requiere 2 sacrificios. se verifica que se convocó al monstruo y se

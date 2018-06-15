@@ -44,7 +44,11 @@ public class RegionMonstruos {
 		return listaDeMonstruos;
 	}
 
-
+	public void removerMonstruo(String unNombreDeMonstruo){
+		
+		this.cartasMonstruos.remove(unNombreDeMonstruo);
+	}
+	
 	public void agujeroNegro() {
 		
 		this.cartasMonstruos.clear();

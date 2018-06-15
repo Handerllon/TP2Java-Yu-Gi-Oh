@@ -25,7 +25,6 @@ public class Jugador {
 		//Pongo arrayList, cualquier cosa lo cambiamos
 		this.mazo = new ArrayList<Carta>();
 		this.cartasEnMano = new ArrayList<Carta>();
-		this.areaDeJuego = new AreaDeJuego();
 		this.puntosDeVida = 8000;
 		
 	}
@@ -103,20 +102,24 @@ public class Jugador {
 		if (cartaAtacada.muereAnte(cartaEnemiga)){
 			this.puntosDeVida = this.puntosDeVida - cartaAtacada.verificarDanioAJugador(cartaEnemiga);
 			this.areaDeJuego.mandarCartaAlCementerio(cartaAtacada);
+			this.areaDeJuego.removerMonstruoDeRegion(cartaAtacada.obtenerNombre());
 		}
+		
 		else if(cartaAtacada.tieneMismosCantidadDePuntosQue(cartaEnemiga)){
 			
 			areaDeJuegoOponente.mandarCartaAlCementerio(cartaEnemiga);
+			areaDeJuegoOponente.removerMonstruoDeRegion(cartaEnemiga.obtenerNombre());
 			this.areaDeJuego.mandarCartaAlCementerio(cartaAtacada);
+			this.areaDeJuego.removerMonstruoDeRegion(cartaAtacada.obtenerNombre());
 		}
 		
 		else{
 			areaDeJuegoOponente.mandarCartaAlCementerio(cartaEnemiga);
+			areaDeJuegoOponente.removerMonstruoDeRegion(cartaEnemiga.obtenerNombre());
 		}
 	}
 
 	public boolean cartaEstaEnCementerio(String unNombreDeCarta) {
-		//Carta cartaAVerificar = this.areaDeJuego.obtenerCarta(unNombreDeCarta);
 		return this.areaDeJuego.cartaEstaEnElCementerio(unNombreDeCarta);
 	}
 

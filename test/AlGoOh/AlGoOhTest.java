@@ -111,9 +111,11 @@ public class AlGoOhTest {
     	//Si se ataca a un monstruo con mayor ataque al que esta atacando, el jugador que ataco 
     	//no recibe danio a sus puntos de vida
     	int puntosDeVidaRestantesEsperadosParaJugador2 = 8000;
+    	int puntosDeVidaRestantesEsperadosParaJugador1 = 8000;
     	
     	assertTrue(jugador1.cartaEstaEnCementerio("Monstruo Bueno"));
     	assertEquals (puntosDeVidaRestantesEsperadosParaJugador2, jugador2.puntosDeVida());
+    	assertEquals (puntosDeVidaRestantesEsperadosParaJugador1, jugador1.puntosDeVida());
     	
     }
 
@@ -219,7 +221,7 @@ public class AlGoOhTest {
     }
     
     @Test
-    public void test06() {
+    public void test11SeJuegaAgujeroNegroYMuerenTodosLosMonstruosDeAmbasRegionesYLosPuntosDeVidaQuedanIguales() {
     	Jugador jugador1 = new Jugador("Jugador 1");
     	Jugador jugador2 = new Jugador("Jugador 2");
     	

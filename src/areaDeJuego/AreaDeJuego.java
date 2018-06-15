@@ -13,10 +13,11 @@ public class AreaDeJuego {
 	private RegionMonstruos regionMonstruos;
 	private RegionMagicasYTrampas regionMagicasYTrampas;
 	private RegionCampo regionCampo;
-	private Cementerio cementerio; 
+	private Cementerio cementerio;
+	private Jugador jugadorAsociado;
 	
 
-	public AreaDeJuego() {
+	public AreaDeJuego(Jugador jugador) {
 	
 		this.regionMonstruos = new RegionMonstruos();
 
@@ -24,6 +25,8 @@ public class AreaDeJuego {
 
 		this.regionCampo = new RegionCampo();
 
+		this.jugadorAsociado = jugador;
+		
 		this.cementerio = new Cementerio ();
 	}
 
@@ -74,5 +77,10 @@ public class AreaDeJuego {
 	public boolean cartaEstaEnElCementerio (String unNombreDeCarta){
 		
 		return this.cementerio.tieneCarta(unNombreDeCarta);
+	}
+
+	public void removerMonstruoDeRegion(String unNombreDeMonstruo) {
+		this.regionMonstruos.removerMonstruo(unNombreDeMonstruo);
+		
 	}
 }

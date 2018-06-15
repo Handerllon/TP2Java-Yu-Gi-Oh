@@ -13,21 +13,16 @@ public class Cementerio {
 		
 	}
 
-public void colocarCarta(Carta unaCarta) {
+	public void colocarCarta(Carta unaCarta) {
 	
-	cartas.put(unaCarta.obtenerNombre(), unaCarta);
+		cartas.put(unaCarta.obtenerNombre(), unaCarta);
 	
 	}
 
-public boolean tieneCarta(String unNombreDeCarta) {
-	/*Carta carta = cartas.get(unaCarta.obtenerNombre());
-	if(carta != null)
-		return true;
-	return false;
-	*/
+	public boolean tieneCarta(String unNombreDeCarta) {
 	
-	return cartas.containsKey(unNombreDeCarta);
-}
+		return cartas.containsKey(unNombreDeCarta);	
+	}
 
 
 }

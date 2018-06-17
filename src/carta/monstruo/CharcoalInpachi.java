@@ -6,7 +6,6 @@ public class CharcoalInpachi extends CartaMonstruo
 {
     public CharcoalInpachi()
     {
-
         this.puntosAtaque = 100;
         this.puntosDefensa = 2100;
         this.nivel = 1;

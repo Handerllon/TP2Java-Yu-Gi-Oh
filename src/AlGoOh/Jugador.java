@@ -5,6 +5,7 @@ import AreaDeJuego.AreaDeCartas;
 import AreaDeJuego.Tablero;
 import carta.Mano;
 import carta.Mazo;
+import carta.Sacrificio;
 import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;
 
@@ -64,22 +65,25 @@ public class Jugador
     }
 
 
-    public void agregarCartaAAreaDeCartas(CartaMonstruo cartaJugador)
+    public void agregarCarta(CartaMonstruo cartaJugador, Sacrificio sacrificios)
     {
-        areaDeCartas.agregarCarta(cartaJugador);
+        tablero.agregarCarta(cartaJugador, sacrificios);
     }
 
-    public void agregarCartaAAreaDeCartas(CartaMagica cartaJugador)
+    public void agregarCarta(CartaMagica cartaJugador)
     {
-        areaDeCartas.agregarCarta(cartaJugador);
-        if(cartaJugador.orientacionArriba()){
-            tablero.activarEfectoCartaMagica(cartaJugador);
-        }
+        tablero.agregarCarta(cartaJugador);
+
     }
 
     public boolean cartaEstaEnCementerio(CartaMonstruo cartaJugador)
     {
-        return areaDeCartas.cartaEstaEnCementerio(cartaJugador.obtenerNombre());
+        return areaDeCartas.cartaEstaEnCementerio(cartaJugador);
+    }
+
+    public boolean cartaEstaEnRegionMonstruos(CartaMonstruo carta)
+    {
+        return areaDeCartas.cartaEstaEnRegionMonstruos(carta);
     }
 
     public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente)

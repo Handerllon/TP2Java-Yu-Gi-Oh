@@ -6,7 +6,6 @@ public class GaiaTheFierceKnight extends CartaMonstruo
 {
     public GaiaTheFierceKnight()
     {
-
         this.puntosAtaque = 2300;
         this.puntosDefensa = 2100;
         this.nivel = 7;

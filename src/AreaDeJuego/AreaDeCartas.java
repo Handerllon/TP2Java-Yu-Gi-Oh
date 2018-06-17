@@ -1,6 +1,8 @@
 package AreaDeJuego;
 
 import AlGoOh.Jugador;
+import AreaDeJuego.excepciones.RegionMagicasYTrampasSinEspacioLibre;
+import AreaDeJuego.excepciones.RegionMonstruoSinEspacioLibre;
 import carta.Carta;
 import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;
@@ -31,14 +33,6 @@ public class AreaDeCartas
         this.jugadorAsociado = jugador;
     }
 
-    public Carta obtenerCarta(String nombreDeMonstruo)
-    {
-        Carta carta;
-        carta = this.regionMonstruos.obtenerCarta(nombreDeMonstruo);
-        return carta;
-
-    }
-
     public void enviarAlCementerio(Carta carta)
     {
         this.cementerio.colocarCarta(carta);
@@ -53,20 +47,45 @@ public class AreaDeCartas
         this.regionMonstruos.removerTodasLasCartas();
     }
 
-    public boolean cartaEstaEnCementerio(String unNombreDeCarta)
+    public boolean cartaEstaEnCementerio(Carta carta)
     {
-        return this.cementerio.contieneCarta(unNombreDeCarta);
+        return this.cementerio.contieneCarta(carta);
+    }
+
+    public boolean cartaEstaEnRegionMonstruos(CartaMonstruo carta)
+    {
+        return this.regionMonstruos.contieneCarta(carta);
     }
 
     public void agregarCarta(CartaMonstruo carta)
     {
-        regionMonstruos.colocarCarta(carta);
+        if(regionMonstruos.hayEspacioLibre())
+            regionMonstruos.colocarCarta(carta);
+        else
+            throw new RegionMonstruoSinEspacioLibre();
     }
 
     public void agregarCarta(CartaMagica cartaJugador)
     {
-        regionMagicasYTrampas.colocarCarta(cartaJugador);
+        if(regionMagicasYTrampas.hayEspacioLibre())
+            regionMagicasYTrampas.colocarCarta(cartaJugador);
+        else
+            throw new RegionMagicasYTrampasSinEspacioLibre();
     }
 
 
+    public boolean noTieneMonstruos()
+    {
+        return regionMonstruos.estaVacia();
+    }
+
+    public boolean tieneMonstruos()
+    {
+        return !this.noTieneMonstruos();
+    }
+
+    public void removerCarta(CartaMonstruo carta)
+    {
+        regionMonstruos.removerCarta(carta);
+    }
 }

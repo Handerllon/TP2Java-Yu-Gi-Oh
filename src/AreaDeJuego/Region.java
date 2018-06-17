@@ -1,6 +1,7 @@
 package AreaDeJuego;
 
 import carta.Carta;
+import carta.excepciones.CartaNoExisteEnRegion;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,26 +10,23 @@ import java.util.Map;
 public class Region
 {
     protected HashMap<String, Carta> cartas;
+    protected int capacidad;
 
     public void colocarCarta(Carta carta)
     {
         cartas.put(carta.obtenerNombre(), carta);
+        this.capacidad--;
     }
 
-    public Carta obtenerCarta(String nombre)
+    public Carta obtenerCarta(Carta carta)
     {
-        return cartas.get(nombre);
+        return cartas.get(carta.obtenerNombre());
     }
 
-    public boolean contieneCarta(String nombreDeCarta)
+    public boolean contieneCarta(Carta carta)
     {
 
-        return cartas.containsKey(nombreDeCarta);
-    }
-
-    public Carta removerCarta(String nombre)
-    {
-        return this.cartas.remove(nombre);
+        return cartas.containsKey(carta.obtenerNombre());
     }
 
     public ArrayList<Carta> obtenerCartas()
@@ -44,8 +42,16 @@ public class Region
         return listaDeCartas;
     }
 
-    public void removerTodasLasCartas()
+    public boolean hayEspacioLibre()
     {
-        cartas.clear();
+        return this.capacidad != 0;
+    }
+
+    public void removerCarta(Carta carta)
+    {
+        if (this.contieneCarta(carta))
+            this.cartas.remove(carta.obtenerNombre());
+        else
+            throw new CartaNoExisteEnRegion(carta);
     }
 }

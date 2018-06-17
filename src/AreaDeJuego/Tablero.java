@@ -1,6 +1,7 @@
 package AreaDeJuego;
 
 import AlGoOh.Jugador;
+import carta.Sacrificio;
 import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;
 
@@ -20,13 +21,15 @@ public class Tablero
         this.inicializarAreas();
     }
 
-    private void inicializarAreas(){
+    private void inicializarAreas()
+    {
         this.areaDeCartasJugador = this.jugador.areaDeCartas();
         this.areaDeCartasOponente = this.oponente.areaDeCartas();
     }
 
     // Esto cambia el estado del tablero. Podríamos abastaernos.
-    public void cambiarTurno(){
+    public void cambiarTurno()
+    {
         Jugador tempJugador = this.jugador;
 
         this.jugador = this.oponente;
@@ -92,4 +95,38 @@ public class Tablero
     }
 
 
+    public void agregarCarta(CartaMonstruo cartaJugador, Sacrificio sacrificios)
+    {
+        CartaMonstruo cartaASacrificar;
+
+        if (areaDeCartasJugador.tieneMonstruos())
+        {
+            if (cartaJugador.getNivel() >= 5 && cartaJugador.getNivel() <= 6)
+            {
+                cartaASacrificar = sacrificios.obtenerMonstruo();
+                areaDeCartasJugador.removerCarta(cartaASacrificar);
+                areaDeCartasJugador.enviarAlCementerio(cartaASacrificar);
+
+            } else if (cartaJugador.getNivel() >= 7)
+            {
+                cartaASacrificar = sacrificios.obtenerMonstruo();
+                areaDeCartasJugador.removerCarta(cartaASacrificar);
+                areaDeCartasJugador.enviarAlCementerio(cartaASacrificar);
+                cartaASacrificar = sacrificios.obtenerMonstruo();
+                areaDeCartasJugador.removerCarta(cartaASacrificar);
+                areaDeCartasJugador.enviarAlCementerio(cartaASacrificar);
+            }
+        }
+
+        areaDeCartasJugador.agregarCarta(cartaJugador);
+    }
+
+    public void agregarCarta(CartaMagica cartaJugador)
+    {
+        areaDeCartasJugador.agregarCarta(cartaJugador);
+        if (cartaJugador.orientacionArriba())
+        {
+            this.activarEfectoCartaMagica(cartaJugador);
+        }
+    }
 }

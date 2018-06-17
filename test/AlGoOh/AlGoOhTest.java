@@ -4,12 +4,11 @@ import AreaDeJuego.Cementerio;
 import AreaDeJuego.RegionCampo;
 import AreaDeJuego.RegionMonstruos;
 import AreaDeJuego.Tablero;
+import carta.Sacrificio;
+import carta.SacrificioNulo;
 import carta.magica.CartaMagica;
 import carta.magica.DarkHole;
-import carta.monstruo.AlexandriteDragon;
-import carta.monstruo.CartaMonstruo;
-import carta.monstruo.CharcoalInpachi;
-import carta.monstruo.GaiaTheFierceKnight;
+import carta.monstruo.*;
 import carta.trampa.CartaTrampa;
 import carta.trampa.MagicCylinder;
 import org.junit.Test;
@@ -68,7 +67,7 @@ public class AlGoOhTest
 
         cementerio.colocarCarta(carta);
 
-        assertTrue(cementerio.contieneCarta("Alexandrite Dragon"));
+        assertTrue(cementerio.contieneCarta(carta));
 
     }
 
@@ -84,12 +83,12 @@ public class AlGoOhTest
 
         CartaMonstruo cartaJugador1 = new CharcoalInpachi();
         cartaJugador1.cambiarModo();
-        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        jugador1.agregarCarta(cartaJugador1, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
         cartaJugador2.cambiarModo();
-        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        jugador2.agregarCarta(cartaJugador2, new SacrificioNulo());
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == (8000-2200));
@@ -110,12 +109,12 @@ public class AlGoOhTest
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
         cartaJugador1.cambiarModo();
-        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        jugador1.agregarCarta(cartaJugador1, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new CharcoalInpachi();
         cartaJugador2.cambiarModo();
-        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        jugador2.agregarCarta(cartaJugador2, new SacrificioNulo());
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador2.getPuntosDeVida() == (8000-2200));
@@ -136,12 +135,12 @@ public class AlGoOhTest
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
         cartaJugador1.cambiarModo();
-        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        jugador1.agregarCarta(cartaJugador1, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
         cartaJugador2.cambiarModo();
-        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        jugador2.agregarCarta(cartaJugador2, new SacrificioNulo());
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
@@ -163,12 +162,12 @@ public class AlGoOhTest
         jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new CharcoalInpachi();
-        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        jugador1.agregarCarta(cartaJugador1, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
         cartaJugador2.cambiarModo();
-        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        jugador2.agregarCarta(cartaJugador2, new SacrificioNulo());
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
@@ -188,12 +187,12 @@ public class AlGoOhTest
         jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
-        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        jugador1.agregarCarta(cartaJugador1, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new CharcoalInpachi();
         cartaJugador2.cambiarModo();
-        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        jugador2.agregarCarta(cartaJugador2, new SacrificioNulo());
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
@@ -213,16 +212,16 @@ public class AlGoOhTest
         jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
-        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        jugador1.agregarCarta(cartaJugador1, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new CharcoalInpachi();
-        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        jugador2.agregarCarta(cartaJugador2, new SacrificioNulo());
         tableroJuego.cambiarTurno();
 
         CartaMagica cartaMagicaJugador1 = new DarkHole();
         cartaMagicaJugador1.cambiarOrientacion();
-        jugador1.agregarCartaAAreaDeCartas(cartaMagicaJugador1);
+        jugador1.agregarCarta(cartaMagicaJugador1);
 
         assertTrue(jugador1.cartaEstaEnCementerio(cartaJugador1));
         assertTrue(jugador2.cartaEstaEnCementerio(cartaJugador2));
@@ -235,9 +234,26 @@ public class AlGoOhTest
     ambos lados del campo, y que nadie recibió daño alguno.*/
 
     @Test
-    public void test12()
+    public void test12SeColocaMonstruoEnCampoYSeColocaMonstroDe6EstrellasSacrificandoCorrectamenteAlPrimero()
     {
-        assertTrue(0 == 0);
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
+
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
+
+        CartaMonstruo carta1Jugador1 = new CharcoalInpachi();
+        jugador1.agregarCarta(carta1Jugador1, new SacrificioNulo());
+
+        CartaMonstruo carta2Jugador1 = new AmphibianBeast();
+        Sacrificio sacrificios = new Sacrificio();
+        sacrificios.agregar(carta1Jugador1);
+        jugador1.agregarCarta(carta2Jugador1,sacrificios);
+
+        assertTrue(jugador1.cartaEstaEnCementerio(carta1Jugador1));
+        assertTrue(jugador1.cartaEstaEnRegionMonstruos(carta2Jugador1));
+
     }/*Se coloca un monstruo en el campo, se quiere colocar un monstruo de 5 o 6
     estrellas que requiere sacrificio. se verifica que se convocó al monstruo y se
     destruyó el primero.*/

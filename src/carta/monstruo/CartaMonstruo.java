@@ -50,4 +50,9 @@ public class CartaMonstruo extends Carta
     {
         return modo instanceof ModoDefensa;
     }
+
+    public int getNivel()
+    {
+        return this.nivel;
+    }
 }

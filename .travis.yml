@@ -1,3 +1,4 @@
 language: java
-install: ant
-jdk: -oraclejdk8
+install: ant deps
+jdk: 
+    -oraclejdk8

@@ -14,6 +14,7 @@ import carta.trampa.CartaTrampa;
 import carta.trampa.MagicCylinder;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class AlGoOhTest
@@ -94,17 +95,67 @@ public class AlGoOhTest
         jugador.atacar(cartaJugador, cartaOponente);
 
         assertTrue(jugador.getPuntosDeVida() == (8000-2200));
+
         assertTrue(jugador.cartaEstaEnCementerio(cartaJugador));
+        assertFalse(oponente.cartaEstaEnCementerio(cartaOponente));
     }
 
     @Test
     public void test07JugadorAtacaAMonstruoEnPosicionDeAtaqueConMenorAtaqueQueElDelJugador()
     {
+        CartaMonstruo cartaJugador = new GaiaTheFierceKnight();
+        CartaMonstruo cartaOponente = new CharcoalInpachi();
+
+        Jugador jugador = new Jugador("J");
+        Jugador oponente = new Jugador("O");
+
+        Tablero tableroJuego = new Tablero(jugador, oponente);
+
+        jugador.agregarATablero(tableroJuego);
+        oponente.agregarATablero(tableroJuego);
+
+        cartaJugador.cambiarModo();
+        jugador.agregarAreaDeCartas(cartaJugador);
+
+        cartaOponente.cambiarModo();
+        oponente.agregarAreaDeCartas(cartaOponente);
+
+        jugador.atacar(cartaJugador, cartaOponente);
+
+        assertTrue(oponente.getPuntosDeVida() == (8000-2200));
+
+        assertTrue(oponente.cartaEstaEnCementerio(cartaOponente));
+        assertFalse(jugador.cartaEstaEnCementerio(cartaJugador));
     }
 
     @Test
     public void test08JugadorAtacaAMonstruoEnPosicionDeAtaqueConIgualAtaqueQueElDelJugador()
     {
+        CartaMonstruo cartaJugador = new GaiaTheFierceKnight();
+        CartaMonstruo cartaOponente = new GaiaTheFierceKnight();
+
+        Jugador jugador = new Jugador("J");
+        Jugador oponente = new Jugador("O");
+
+        Tablero tableroJuego = new Tablero(jugador, oponente);
+
+        jugador.agregarATablero(tableroJuego);
+        oponente.agregarATablero(tableroJuego);
+
+        cartaJugador.cambiarModo();
+        jugador.agregarAreaDeCartas(cartaJugador);
+
+        cartaOponente.cambiarModo();
+        oponente.agregarAreaDeCartas(cartaOponente);
+
+        jugador.atacar(cartaJugador, cartaOponente);
+
+        assertTrue(jugador.getPuntosDeVida() == 8000);
+        assertTrue(oponente.getPuntosDeVida() == 8000);
+
+        assertTrue(jugador.cartaEstaEnCementerio(cartaJugador));
+        assertTrue(oponente.cartaEstaEnCementerio(cartaOponente));
+
     }
 
     @Test

@@ -25,6 +25,10 @@ public class CartaMonstruo extends Carta
     {
         this.modo.cambiarModo(this);
     }
+
+    public void atacar(CartaMonstruo cartaAAtacar){
+
+    }
 }
 	
 

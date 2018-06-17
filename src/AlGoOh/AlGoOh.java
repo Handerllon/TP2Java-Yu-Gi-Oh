@@ -8,12 +8,9 @@ public class AlGoOh
     private Tablero tablero;
     private Jugador jugador;
     private Jugador oponente;
-    private Enfrentamiento enfrentamiento;
 
     public AlGoOh()
     {
-
-        this.enfrentamiento = new Enfrentamiento();
 
     }
 
@@ -34,7 +31,8 @@ public class AlGoOh
 
     }
 
-    public Jugador obtenerJugador(){
+    public Jugador obtenerJugador()
+    {
         return this.jugador;
     }
 }

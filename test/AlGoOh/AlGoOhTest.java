@@ -75,98 +75,131 @@ public class AlGoOhTest
     @Test
     public void test06JugadorAtacaAMonstruoOponenteEnPosicionDeAtaqueConMayorAtaqueQueElDelJugador()
     {
-        CartaMonstruo cartaJugador = new CharcoalInpachi();
-        CartaMonstruo cartaOponente = new GaiaTheFierceKnight();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
-        Jugador jugador = new Jugador("J");
-        Jugador oponente = new Jugador("O");
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.agregarATablero(tableroJuego);
+        jugador2.agregarATablero(tableroJuego);
 
-        Tablero tableroJuego = new Tablero(jugador, oponente);
+        CartaMonstruo cartaJugador1 = new CharcoalInpachi();
+        cartaJugador1.cambiarModo();
+        jugador1.agregarAreaDeCartas(cartaJugador1);
+        tableroJuego.cambiarTurno();
 
-        jugador.agregarATablero(tableroJuego);
-        oponente.agregarATablero(tableroJuego);
+        CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
+        cartaJugador2.cambiarModo();
+        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.atacar(cartaJugador2,cartaJugador1);
 
-        cartaJugador.cambiarModo();
-        jugador.agregarAreaDeCartas(cartaJugador);
+        assertTrue(jugador1.getPuntosDeVida() == (8000-2200));
 
-        cartaOponente.cambiarModo();
-        oponente.agregarAreaDeCartas(cartaOponente);
-
-        jugador.atacar(cartaJugador, cartaOponente);
-
-        assertTrue(jugador.getPuntosDeVida() == (8000-2200));
-
-        assertTrue(jugador.cartaEstaEnCementerio(cartaJugador));
-        assertFalse(oponente.cartaEstaEnCementerio(cartaOponente));
+        assertTrue(jugador1.cartaEstaEnCementerio(cartaJugador1));
+        assertFalse(jugador2.cartaEstaEnCementerio(cartaJugador2));
     }
 
     @Test
     public void test07JugadorAtacaAMonstruoEnPosicionDeAtaqueConMenorAtaqueQueElDelJugador()
     {
-        CartaMonstruo cartaJugador = new GaiaTheFierceKnight();
-        CartaMonstruo cartaOponente = new CharcoalInpachi();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
-        Jugador jugador = new Jugador("J");
-        Jugador oponente = new Jugador("O");
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.agregarATablero(tableroJuego);
+        jugador2.agregarATablero(tableroJuego);
 
-        Tablero tableroJuego = new Tablero(jugador, oponente);
+        CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
+        cartaJugador1.cambiarModo();
+        jugador1.agregarAreaDeCartas(cartaJugador1);
+        tableroJuego.cambiarTurno();
 
-        jugador.agregarATablero(tableroJuego);
-        oponente.agregarATablero(tableroJuego);
+        CartaMonstruo cartaJugador2 = new CharcoalInpachi();
+        cartaJugador2.cambiarModo();
+        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.atacar(cartaJugador2,cartaJugador1);
 
-        cartaJugador.cambiarModo();
-        jugador.agregarAreaDeCartas(cartaJugador);
+        assertTrue(jugador2.getPuntosDeVida() == (8000-2200));
 
-        cartaOponente.cambiarModo();
-        oponente.agregarAreaDeCartas(cartaOponente);
-
-        jugador.atacar(cartaJugador, cartaOponente);
-
-        assertTrue(oponente.getPuntosDeVida() == (8000-2200));
-
-        assertTrue(oponente.cartaEstaEnCementerio(cartaOponente));
-        assertFalse(jugador.cartaEstaEnCementerio(cartaJugador));
+        assertTrue(jugador2.cartaEstaEnCementerio(cartaJugador2));
+        assertFalse(jugador1.cartaEstaEnCementerio(cartaJugador1));
     }
 
     @Test
     public void test08JugadorAtacaAMonstruoEnPosicionDeAtaqueConIgualAtaqueQueElDelJugador()
     {
-        CartaMonstruo cartaJugador = new GaiaTheFierceKnight();
-        CartaMonstruo cartaOponente = new GaiaTheFierceKnight();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
-        Jugador jugador = new Jugador("J");
-        Jugador oponente = new Jugador("O");
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.agregarATablero(tableroJuego);
+        jugador2.agregarATablero(tableroJuego);
 
-        Tablero tableroJuego = new Tablero(jugador, oponente);
+        CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
+        cartaJugador1.cambiarModo();
+        jugador1.agregarAreaDeCartas(cartaJugador1);
+        tableroJuego.cambiarTurno();
 
-        jugador.agregarATablero(tableroJuego);
-        oponente.agregarATablero(tableroJuego);
+        CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
+        cartaJugador2.cambiarModo();
+        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.atacar(cartaJugador2,cartaJugador1);
 
-        cartaJugador.cambiarModo();
-        jugador.agregarAreaDeCartas(cartaJugador);
+        assertTrue(jugador1.getPuntosDeVida() == 8000);
+        assertTrue(jugador2.getPuntosDeVida() == 8000);
 
-        cartaOponente.cambiarModo();
-        oponente.agregarAreaDeCartas(cartaOponente);
-
-        jugador.atacar(cartaJugador, cartaOponente);
-
-        assertTrue(jugador.getPuntosDeVida() == 8000);
-        assertTrue(oponente.getPuntosDeVida() == 8000);
-
-        assertTrue(jugador.cartaEstaEnCementerio(cartaJugador));
-        assertTrue(oponente.cartaEstaEnCementerio(cartaOponente));
+        assertTrue(jugador1.cartaEstaEnCementerio(cartaJugador1));
+        assertTrue(jugador2.cartaEstaEnCementerio(cartaJugador2));
 
     }
 
     @Test
     public void test09JugadorAtacaMonstruoEnPosicionDeDefensaConMenorDefensaQueElAtaqueDelMismo()
     {
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.agregarATablero(tableroJuego);
+        jugador2.agregarATablero(tableroJuego);
+
+        CartaMonstruo cartaJugador1 = new CharcoalInpachi();
+        jugador1.agregarAreaDeCartas(cartaJugador1);
+        tableroJuego.cambiarTurno();
+
+        CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
+        cartaJugador2.cambiarModo();
+        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.atacar(cartaJugador2,cartaJugador1);
+
+        assertTrue(jugador1.getPuntosDeVida() == 8000);
+
+        assertTrue(jugador1.cartaEstaEnCementerio(cartaJugador1));
+        assertFalse(jugador2.cartaEstaEnCementerio(cartaJugador2));
     }
 
     @Test
     public void test10JugadorAtacaMonstruoEnPosicionDeDefensaConMayorDefensaQueElAtaqueDelMismo()
     {
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
+
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.agregarATablero(tableroJuego);
+        jugador2.agregarATablero(tableroJuego);
+
+        CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
+        jugador1.agregarAreaDeCartas(cartaJugador1);
+        tableroJuego.cambiarTurno();
+
+        CartaMonstruo cartaJugador2 = new CharcoalInpachi();
+        cartaJugador2.cambiarModo();
+        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.atacar(cartaJugador2,cartaJugador1);
+
+        assertTrue(jugador1.getPuntosDeVida() == 8000);
+
+        assertFalse(jugador1.cartaEstaEnCementerio(cartaJugador1));
+        assertFalse(jugador2.cartaEstaEnCementerio(cartaJugador2));
     }
 
     @Test

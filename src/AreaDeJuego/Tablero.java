@@ -13,19 +13,32 @@ public class Tablero
 
     public Tablero(Jugador jugador, Jugador oponente)
     {
-
-        this.areaDeCartasJugador = jugador.areaDeCartas();
-        this.areaDeCartasOponente = oponente.areaDeCartas();
-
         this.jugador = jugador;
         this.oponente = oponente;
 
+        this.inicializarAreas();
+    }
+
+    private void inicializarAreas(){
+        this.areaDeCartasJugador = this.jugador.areaDeCartas();
+        this.areaDeCartasOponente = this.oponente.areaDeCartas();
+    }
+
+    // Esto cambia el estado del tablero. Podríamos abastaernos.
+    public void cambiarTurno(){
+        Jugador tempJugador = this.jugador;
+
+        this.jugador = this.oponente;
+        this.oponente = tempJugador;
+
+        this.inicializarAreas();
     }
 
     public void atacarOponente(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente)
     {
         int diferenciaPuntos = cartaJugador.getPuntos() - cartaOponente.getPuntos();
 
+        // Esto capaz se puede hacer de una forma más elegante y prolija.
         if (cartaJugador.enAtaque() && cartaOponente.enAtaque())
         {
             if (diferenciaPuntos > 0)

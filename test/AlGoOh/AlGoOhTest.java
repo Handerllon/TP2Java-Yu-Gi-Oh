@@ -80,7 +80,7 @@ public class AlGoOhTest
         Jugador jugador = new Jugador("J");
         Jugador oponente = new Jugador("O");
 
-        Tablero tableroJuego = new Tablero(jugador,oponente);
+        Tablero tableroJuego = new Tablero(jugador, oponente);
 
         jugador.agregarATablero(tableroJuego);
         oponente.agregarATablero(tableroJuego);
@@ -93,6 +93,7 @@ public class AlGoOhTest
 
         jugador.atacar(cartaJugador, cartaOponente);
 
+        assertTrue(jugador.getPuntosDeVida() == (8000-2200));
     }
 
     @Test

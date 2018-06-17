@@ -14,7 +14,6 @@ public class CartaMonstruo extends Carta
 
     public CartaMonstruo()
     {
-        this.modo = new ModoDefensa();
     }
 
     public void establecerModo(Modo modoNuevo)

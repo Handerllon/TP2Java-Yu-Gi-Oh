@@ -40,17 +40,18 @@ public class Jugador
 
     }
 
-    public void agregarATablero(Tablero tablero){
+    public void agregarATablero(Tablero tablero)
+    {
         this.tablero = tablero;
     }
 
-    public int puntosDeVida()
+    public int getPuntosDeVida()
     {
-
         return this.puntosDeVida;
     }
 
-    public AreaDeCartas areaDeCartas(){
+    public AreaDeCartas areaDeCartas()
+    {
         return this.areaDeCartas;
     }
 
@@ -60,13 +61,15 @@ public class Jugador
         areaDeCartas.agregarCarta(cartaJugador);
     }
 
-    public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente){
-        tablero.atacarOponente(cartaJugador,cartaOponente);
+    public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente)
+    {
+        tablero.atacarOponente(cartaJugador, cartaOponente);
     }
 
-    public void restarVida(int puntosARestar){
+    public void restarVida(int puntosARestar)
+    {
         this.puntosDeVida -= puntosARestar;
-        if(this.puntosDeVida <= 0)
+        if (this.puntosDeVida <= 0)
             throw new JugadorSinVida();
     }
 }

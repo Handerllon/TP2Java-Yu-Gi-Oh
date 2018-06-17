@@ -28,12 +28,12 @@ public class Tablero
         int puntosOponente;
         int diferenciaPuntos;
 
+        puntosJugador = cartaJugador.getPuntos();
+        puntosOponente = cartaOponente.getPuntos();
+        diferenciaPuntos = puntosJugador - puntosOponente;
+
         if (cartaJugador.enAtaque() && cartaOponente.enAtaque())
         {
-            puntosJugador = cartaJugador.getPuntosAtaque();
-            puntosOponente = cartaOponente.getPuntosAtaque();
-            diferenciaPuntos = puntosJugador - puntosOponente;
-
             if (diferenciaPuntos > 0)
             {
                 // cartaOponente al cementerio.
@@ -53,10 +53,6 @@ public class Tablero
 
         if (cartaJugador.enAtaque() && cartaOponente.enDefensa())
         {
-            puntosJugador = cartaJugador.getPuntosAtaque();
-            puntosOponente = cartaOponente.getPuntosDefensa();
-            diferenciaPuntos = puntosJugador - puntosOponente;
-
             if (diferenciaPuntos > 0)
             {
                 // cartaOponente al cementerio.

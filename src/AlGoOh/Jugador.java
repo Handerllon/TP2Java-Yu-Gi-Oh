@@ -1,5 +1,6 @@
 package AlGoOh;
 
+import AlGoOh.excepciones.JugadorSinVida;
 import AreaDeJuego.AreaDeCartas;
 import AreaDeJuego.Tablero;
 import carta.Mano;
@@ -61,6 +62,12 @@ public class Jugador
 
     public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente){
         tablero.atacarOponente(cartaJugador,cartaOponente);
+    }
+
+    public void restarVida(int puntosARestar){
+        this.puntosDeVida -= puntosARestar;
+        if(this.puntosDeVida <= 0)
+            throw new JugadorSinVida();
     }
 }
 

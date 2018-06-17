@@ -10,7 +10,7 @@ public abstract class Modo
         carta.establecerModo(new ModoAtaque());
     }
 
-    public void setPuntos(int puntos){
-        this.puntos = puntos;
+    public int getPuntos(){
+        return this.puntos;
     }
 }

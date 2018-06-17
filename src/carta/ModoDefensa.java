@@ -8,5 +8,7 @@ public class ModoDefensa extends Modo
     public void cambiarModo(CartaMonstruo carta)
     {
         carta.establecerModo(new ModoAtaque());
+        this.puntos = carta.getPuntosAtaque();
     }
+
 }

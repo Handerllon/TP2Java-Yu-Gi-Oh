@@ -2,6 +2,7 @@ package carta.monstruo;
 
 import carta.Carta;
 import carta.Modo;
+import carta.ModoAtaque;
 import carta.ModoDefensa;
 
 public class CartaMonstruo extends Carta
@@ -26,10 +27,28 @@ public class CartaMonstruo extends Carta
         this.modo.cambiarModo(this);
     }
 
-    public void atacar(CartaMonstruo cartaAAtacar){
+    public int getPuntosDefensa()
+    {
+        return this.puntosDefensa;
+    }
 
+    public int getPuntosAtaque()
+    {
+        return this.puntosAtaque;
+    }
+
+    public int getPuntos()
+    {
+        return this.modo.getPuntos();
+    }
+
+    public boolean enAtaque()
+    {
+        return modo instanceof ModoAtaque;
+    }
+
+    public boolean enDefensa()
+    {
+        return modo instanceof ModoDefensa;
     }
 }
-	
-
-

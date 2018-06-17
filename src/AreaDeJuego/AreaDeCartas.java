@@ -2,6 +2,7 @@ package AreaDeJuego;
 
 import carta.Carta;
 import AlGoOh.Jugador;
+import carta.monstruo.CartaMonstruo;
 
 public class AreaDeCartas
 {
@@ -44,6 +45,10 @@ public class AreaDeCartas
     {
 
         return this.cementerio.contieneCarta(unNombreDeCarta);
+    }
+
+    public void agregarCarta(CartaMonstruo carta){
+        regionMonstruos.colocarCarta(carta);
     }
 
 }

@@ -23,14 +23,14 @@ public class FabricaCartas extends Carta
     {
         ArrayList<String> nombres = new ArrayList<String>();
 
-        nombres.add("AlexandriteDragon");
-        nombres.add("AmphibianBeast");
-        nombres.add("AncientBrain");
-        nombres.add("AncientTool");
+        nombres.add("Alexandrite Dragon");
+        nombres.add("Amphibian Beast");
+        nombres.add("Ancient Brain");
+        nombres.add("Ancient Tool");
         nombres.add("Bitron");
-        nombres.add("BlueEyesWhiteDragon");
-        nombres.add("CharcoalInpachi");
-        nombres.add("GaiaTheFierceKnight");
+        nombres.add("Blue-Eyes White Dragon");
+        nombres.add("Charcoal Inpachi");
+        nombres.add("Gaia The Fierce Knight");
 
         return nombres;
     }
@@ -39,14 +39,14 @@ public class FabricaCartas extends Carta
     {
         ArrayList<String> nombres = new ArrayList<String>();
 
-        nombres.add("BlueEyesUltimateDragon");
-        nombres.add("ExodiaTheForbiddenOne");
+        nombres.add("Blue-Eyes Ultimate Dragon");
+        nombres.add("Exodia The Forbidden One");
         nombres.add("Jinzo7");
-        nombres.add("LeftArmOfTheForbiddenOne");
-        nombres.add("LeftLegOfTheForbiddenOne");
-        nombres.add("ManEaterBug");
-        nombres.add("RightArmOfTheForbiddenOne");
-        nombres.add("RightLegOfTheForbiddenOne");
+        nombres.add("Left Arm Of The Forbidden One");
+        nombres.add("Left Leg Of The Forbidden One");
+        nombres.add("Man Eater Bug");
+        nombres.add("Right Arm Of The Forbidden One");
+        nombres.add("Right Leg Of The Forbidden One");
 
         return nombres;
     }
@@ -55,9 +55,9 @@ public class FabricaCartas extends Carta
     {
         ArrayList<String> nombres = new ArrayList<String>();
 
-        nombres.add("DarkHole");
+        nombres.add("Dark Hole");
         nombres.add("Fissure");
-        nombres.add("PotOfGreed");
+        nombres.add("Pot Of Greed");
 
         return nombres;
     }
@@ -76,7 +76,7 @@ public class FabricaCartas extends Carta
     {
         ArrayList<String> nombres = new ArrayList<String>();
 
-        nombres.add("MagicCylinder");
+        nombres.add("Magic Cylinder");
         nombres.add("Reinforcements");
 
         return nombres;
@@ -87,44 +87,44 @@ public class FabricaCartas extends Carta
         switch (nombreCarta)
         {
             // Monstruos.
-            case "AlexandriteDragon":
+            case "Alexandrite Dragon":
                 return new AlexandriteDragon();
-            case "AmphibianBeast":
+            case "Amphibian Beast":
                 return new AmphibianBeast();
-            case "AncientBrain":
+            case "Ancient Brain":
                 return new AncientBrain();
-            case "AncientTool":
+            case "Ancient Tool":
                 return new AncientTool();
             case "Bitron":
                 return new Bitron();
-            case "BlueEyesUltimateDragon":
+            case "Blue-Eyes Ultimate Dragon":
                 return new BlueEyesUltimateDragon();
-            case "BlueEyesWhiteDragon":
+            case "Blue-Eyes White Dragon":
                 return new BlueEyesWhiteDragon();
-            case "CharcoalInpachi":
+            case "Charcoal Inpachi":
                 return new CharcoalInpachi();
-            case "ExodiaTheForbiddenOne":
+            case "Exodia The Forbidden One":
                 return new ExodiaTheForbiddenOne();
-            case "GaiaTheFierceKnight":
+            case "Gaia The Fierce Knight":
                 return new GaiaTheFierceKnight();
             case "Jinzo7":
                 return new Jinzo7();
-            case "LeftArmOfTheForbiddenOne":
+            case "Left Arm Of The Forbidden One":
                 return new LeftArmOfTheForbiddenOne();
-            case "LeftLegOfTheForbiddenOne":
+            case "Left Leg Of The Forbidden One":
                 return new LeftLegOfTheForbiddenOne();
-            case "ManEaterBug":
+            case "Man Eater Bug":
                 return new ManEaterBug();
-            case "RightArmOfTheForbiddenOne":
+            case "Right Arm Of The Forbidden One":
                 return new RightArmOfTheForbiddenOne();
-            case "RightLegOfTheForbiddenOne":
+            case "Right Leg Of The Forbidden One":
                 return new RightLegOfTheForbiddenOne();
             // Magicas.
-            case "DarkHole":
+            case "Dark Hole":
                 return new DarkHole();
             case "Fissure":
                 return new Fissure();
-            case "PotOfGreed":
+            case "Pot Of Greed":
                 return new PotOfGreed();
             // Campo.
             case "Sogen":
@@ -132,7 +132,7 @@ public class FabricaCartas extends Carta
             case "Wasteland":
                 return new Wasteland();
             //Trampa.
-            case "MagicCylinder":
+            case "Magic Cylinder":
                 return new MagicCylinder();
             case "Reinforcements":
                 return new Reinforcements();

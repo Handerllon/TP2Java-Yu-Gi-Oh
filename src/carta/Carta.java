@@ -4,11 +4,11 @@ public class Carta
 {
 
     protected String nombre;
-    protected boolean orientacionArriba;
+    protected Orientacion orientacion;
 
     public Carta()
     {
-        this.orientacionArriba = false;
+        this.orientacion = new OrientacionAbajo();
     }
 
     public String obtenerNombre()
@@ -17,4 +17,8 @@ public class Carta
         return nombre;
     }
 
+    public void establecerOrientacion(Orientacion orientacion)
+    {
+        this.orientacion = orientacion;
+    }
 }

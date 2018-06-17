@@ -1,7 +1,6 @@
 package AlGoOh;
 
 import AreaDeJuego.Tablero;
-import Jugador;
 
 public class AlGoOh
 {

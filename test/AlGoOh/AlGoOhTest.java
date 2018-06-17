@@ -1,5 +1,16 @@
 package AlGoOh;
 
+import AreaDeJuego.Cementerio;
+import AreaDeJuego.RegionCampo;
+import AreaDeJuego.RegionMonstruos;
+import carta.magica.CartaMagica;
+import carta.magica.DarkHole;
+import carta.monstruo.AlexandriteDragon;
+import carta.monstruo.CartaMonstruo;
+import carta.monstruo.CharcoalInpachi;
+import carta.monstruo.GaiaTheFierceKnight;
+import carta.trampa.CartaTrampa;
+import carta.trampa.MagicCylinder;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -8,43 +19,73 @@ public class AlGoOhTest
 {
 
     @Test
-    public void test01SeColocaUnaCartaMonstruoEnAtaqueYLaMismaQuedaEnAtaque()
+    public void test01SeColocaUnaCartaMonstruoEnAtaque()
     {
-        AlGoOh juego = new AlGoOh();
-        juego.inicializarJuego("J1","J2");
+        CartaMonstruo carta = new AlexandriteDragon();
+        carta.cambiarModo();
 
-        juego.obtenerJugador();
-
+        RegionMonstruos regionMonstruos = new RegionMonstruos();
+        regionMonstruos.colocarCarta(carta);
     }
 
     @Test
-    public void test02SeColocaUnaCartaMonstruoEnDefensaYLaMismaQuedaEnDefensa()
+    public void test02SeColocaUnaCartaMonstruoEnDefensa()
     {
+        CartaMonstruo carta = new AlexandriteDragon();
+
+        RegionMonstruos regionMonstruos = new RegionMonstruos();
+        regionMonstruos.colocarCarta(carta);
 
     }
 
     @Test
     public void test03ColocarCartaMagicaEnCampoBocaAbajoNoActivaEfecto()
     {
+        CartaMagica carta = new DarkHole();
+        RegionCampo regionCampo = new RegionCampo();
 
+        regionCampo.colocarCarta(carta);
 
     }
 
     @Test
     public void test04ColocarCartaTrampaEnCampoBocaAbajoNoActivaEfecto()
     {
+        CartaTrampa carta = new MagicCylinder();
+        RegionCampo regionCampo = new RegionCampo();
 
+        regionCampo.colocarCarta(carta);
     }
 
     @Test
     public void test05MandarUnaCartaAlCementerioSeQuedaEnCementerio()
     {
+        CartaMonstruo carta = new AlexandriteDragon();
+
+        Cementerio cementerio = new Cementerio();
+
+        cementerio.colocarCarta(carta);
+
+        assertTrue(cementerio.contieneCarta("Alexandrite Dragon"));
 
     }
 
     @Test
-    public void test06JugadorAtacaAMonstruoEnPosicionDeAtaqueConMayorAtaqueQueElDelJugador()
+    public void test06JugadorAtacaAMonstruoOponenteEnPosicionDeAtaqueConMayorAtaqueQueElDelJugador()
     {
+        CartaMonstruo cartaJugador = new CharcoalInpachi();
+        CartaMonstruo cartaOponente = new GaiaTheFierceKnight();
+
+        Jugador jugador = new Jugador("J");
+        Jugador oponente = new Jugador("O");
+
+        cartaJugador.cambiarModo();
+        jugador.agregarAreaDeCartas(cartaJugador);
+
+        cartaOponente.cambiarModo();
+        oponente.agregarAreaDeCartas(cartaOponente);
+
+        jugador.atacar(cartaJugador, cartaOponente);
 
     }
 

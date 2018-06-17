@@ -6,11 +6,9 @@ import java.util.Stack;
 public class Mazo
 {
     private Stack<Carta> cartas;
-    private int cantidadCartas = 0;
 
     public Mazo(int cantidadCartas)
     {
-        this.cantidadCartas = cantidadCartas;
         this.cartas = new Stack<Carta>();
 
         FabricaCartas fabricaCartas = new FabricaCartas();
@@ -20,33 +18,34 @@ public class Mazo
         ArrayList<String> nombresCampo = fabricaCartas.obtenerNombresCampo();
         ArrayList<String> nombresTrampas = fabricaCartas.obtenerNombresTrampas();
 
-        int cantidadPorAgregar = this.cantidadCartas;
-
-        for (int i = 0; i < nombresMonstruosNoNormales.size() && cantidadPorAgregar > 0; i++)
+        for (int i = 0; i < nombresMonstruosNoNormales.size() && cantidadCartas > 0; i++)
         {
             cartas.push(fabricaCartas.obtenerCarta(nombresMonstruosNoNormales.get(i)));
-            cantidadPorAgregar--;
+            cantidadCartas--;
         }
-        for (int i = 0; i < nombresMagicas.size() && cantidadPorAgregar > 0; i++)
+        for (int i = 0; i < nombresMagicas.size() && cantidadCartas > 0; i++)
         {
             cartas.push(fabricaCartas.obtenerCarta(nombresMagicas.get(i)));
-            cantidadPorAgregar--;
+            cantidadCartas--;
         }
-        for (int i = 0; i < nombresCampo.size() && cantidadPorAgregar > 0; i++)
+        for (int i = 0; i < nombresCampo.size() && cantidadCartas > 0; i++)
         {
             cartas.push(fabricaCartas.obtenerCarta(nombresCampo.get(i)));
-            cantidadPorAgregar--;
+            cantidadCartas--;
         }
-        for (int i = 0; i < nombresTrampas.size() && cantidadPorAgregar > 0; i++)
+        for (int i = 0; i < nombresTrampas.size() && cantidadCartas > 0; i++)
         {
             cartas.push(fabricaCartas.obtenerCarta(nombresTrampas.get(i)));
-            cantidadPorAgregar--;
+            cantidadCartas--;
         }
 
         // Agrego todas las que se pueden repetir.
-        for (int i = 0; i < cantidadPorAgregar; i++)
+        for (int i = 0; cantidadCartas > 0; i++)
         {
+            if (i == nombresMonstruosNormales.size())
+                i = 0;
             cartas.push(fabricaCartas.obtenerCarta(nombresMonstruosNormales.get(i)));
+            cantidadCartas--;
         }
 
         this.mezclar();
@@ -57,7 +56,7 @@ public class Mazo
         Stack<Carta> mazoTemporal = new Stack<Carta>();
         while (!this.cartas.isEmpty())
         {
-            int loc = (int) (Math.random() * cantidadCartas);
+            int loc = (int) (Math.random() * cartas.size());
             mazoTemporal.push(this.cartas.get(loc));
             this.cartas.remove(loc);
         }
@@ -66,9 +65,8 @@ public class Mazo
 
     public Carta agarrarCarta()
     {
-        if (cantidadCartas > 0)
+        if (cartas.size() > 0)
         {
-            cantidadCartas--;
             Carta carta = cartas.pop();
             return carta;
         } else

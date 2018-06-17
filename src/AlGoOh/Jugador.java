@@ -1,7 +1,9 @@
 package AlGoOh;
 
+import AreaDeJuego.AreaDeCartas;
 import carta.Mano;
 import carta.Mazo;
+import carta.monstruo.CartaMonstruo;
 
 public class Jugador
 {
@@ -10,6 +12,7 @@ public class Jugador
     private Mazo mazo;
     private Mano cartasEnMano;
     private int puntosDeVida;
+    private AreaDeCartas areaDeCartas;
 
     public Jugador(String unNombre)
     {
@@ -25,10 +28,12 @@ public class Jugador
         int puntosDeVidaIniciales = 8000;
         this.puntosDeVida = puntosDeVidaIniciales;
 
-        for (int i = 0; i < cartasATomarInicialmente; i++)
-        {
-            this.cartasEnMano.agregarCarta(mazo.agarrarCarta());
-        }
+        this.areaDeCartas = new AreaDeCartas(this);
+
+//        for (int i = 0; i < cartasATomarInicialmente; i++)
+//        {
+//            this.cartasEnMano.agregarCarta(mazo.agarrarCarta());
+//        }
 
     }
 
@@ -39,5 +44,13 @@ public class Jugador
     }
 
 
+    public void agregarAreaDeCartas(CartaMonstruo cartaJugador)
+    {
+        areaDeCartas.agregarCarta(cartaJugador);
+    }
+
+    public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente){
+        // Terminar de pasar.
+    }
 }
 

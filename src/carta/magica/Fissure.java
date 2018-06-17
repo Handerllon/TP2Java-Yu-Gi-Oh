@@ -1,6 +1,6 @@
 package carta.magica;
 
-import clases.Efecto;
+import carta.Efecto;
 
 public class Fissure extends CartaMagica implements Efecto
 {

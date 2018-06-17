@@ -1,6 +1,6 @@
 package carta.campo;
 
-import clases.Efecto;
+import carta.Efecto;
 
 public class Wasteland extends CartaCampo implements Efecto
 {

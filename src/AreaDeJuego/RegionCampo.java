@@ -1,18 +1,14 @@
-package areaDeJuego;
+package AreaDeJuego;
 
 import carta.Carta;
 
 import java.util.HashMap;
 
-public class RegionMagicasYTrampas extends Region
+public class RegionCampo extends Region
 {
-
-    public RegionMagicasYTrampas()
+    public RegionCampo()
     {
-
         this.cartas = new HashMap<String, Carta>();
-
     }
-
 
 }

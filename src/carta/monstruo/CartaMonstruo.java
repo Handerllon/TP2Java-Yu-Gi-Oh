@@ -1,9 +1,9 @@
 package carta.monstruo;
 
 import carta.Carta;
-import clases.Modo;
-import clases.ModoAtaque;
-import clases.ModoDefensa;
+import carta.Modo;
+import carta.ModoAtaque;
+import carta.ModoDefensa;
 
 public class CartaMonstruo extends Carta
 {

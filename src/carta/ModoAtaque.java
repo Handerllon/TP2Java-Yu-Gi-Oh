@@ -1,4 +1,4 @@
-package clases;
+package carta;
 
 public class ModoAtaque extends Modo
 {

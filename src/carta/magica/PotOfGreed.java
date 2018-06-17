@@ -1,6 +1,6 @@
 package carta.magica;
 
-import clases.Efecto;
+import carta.Efecto;
 
 public class PotOfGreed extends CartaMagica implements Efecto
 {

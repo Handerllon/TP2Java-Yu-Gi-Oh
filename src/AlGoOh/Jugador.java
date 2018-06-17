@@ -1,4 +1,4 @@
-package clases;
+package AlGoOh;
 
 import carta.Mano;
 import carta.Mazo;

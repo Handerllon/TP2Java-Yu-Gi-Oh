@@ -1,7 +1,6 @@
 package carta.trampa;
 
-import carta.Carta;
-import clases.Efecto;
+import carta.Efecto;
 
 public class MagicCylinder extends CartaTrampa implements Efecto
 {

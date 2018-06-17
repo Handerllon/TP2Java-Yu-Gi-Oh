@@ -1,7 +1,6 @@
-package AlGoOh;
+package AreaDeJuego;
 
-import areaDeJuego.AreaDeCartas;
-import clases.Jugador;
+import AlGoOh.Jugador;
 
 public class Tablero {
 	

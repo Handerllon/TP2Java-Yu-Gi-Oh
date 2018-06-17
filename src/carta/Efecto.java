@@ -1,4 +1,4 @@
-package clases;
+package carta;
 
 public interface Efecto
 {

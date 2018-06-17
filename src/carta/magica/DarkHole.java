@@ -1,6 +1,6 @@
 package carta.magica;
 
-import clases.Efecto;
+import carta.Efecto;
 
 public class DarkHole extends CartaMagica implements Efecto
 {

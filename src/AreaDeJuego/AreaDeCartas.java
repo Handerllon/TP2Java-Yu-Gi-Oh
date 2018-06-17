@@ -1,7 +1,7 @@
-package areaDeJuego;
+package AreaDeJuego;
 
 import carta.Carta;
-import clases.Jugador;
+import AlGoOh.Jugador;
 
 public class AreaDeCartas
 {

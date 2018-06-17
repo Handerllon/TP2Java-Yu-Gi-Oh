@@ -3,6 +3,7 @@ package AlGoOh;
 import AreaDeJuego.Cementerio;
 import AreaDeJuego.RegionCampo;
 import AreaDeJuego.RegionMonstruos;
+import AreaDeJuego.Tablero;
 import carta.magica.CartaMagica;
 import carta.magica.DarkHole;
 import carta.monstruo.AlexandriteDragon;
@@ -78,6 +79,11 @@ public class AlGoOhTest
 
         Jugador jugador = new Jugador("J");
         Jugador oponente = new Jugador("O");
+
+        Tablero tableroJuego = new Tablero(jugador,oponente);
+
+        jugador.agregarATablero(tableroJuego);
+        oponente.agregarATablero(tableroJuego);
 
         cartaJugador.cambiarModo();
         jugador.agregarAreaDeCartas(cartaJugador);

@@ -1,57 +1,15 @@
 package areaDeJuego;
 
-import java.util.ArrayList;
+import carta.Carta;
+
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
 
-import cartas.CartaMonstruo;
+public class RegionMonstruos extends Region
+{
 
-public class RegionMonstruos {
-	
-	private HashMap <String, CartaMonstruo> cartasMonstruos;
-	
+    public RegionMonstruos()
+    {
+        this.cartas = new HashMap<String, Carta>();
+    }
 
-	public RegionMonstruos() {
-	
-		cartasMonstruos = new HashMap <String, CartaMonstruo>();
-
-	}
-
-
-	public void colocarCarta(CartaMonstruo unaCartaMonstruo) {
-	
-		cartasMonstruos.put(unaCartaMonstruo.obtenerNombre(), unaCartaMonstruo);
-	
-	}
-
-
-	public CartaMonstruo buscarCarta(String nombreDeMonstruo) {
-		
-		return cartasMonstruos.get(nombreDeMonstruo);
-	}
-
-
-	public ArrayList<CartaMonstruo> obtenerMonstruos() {
-	
-		ArrayList<CartaMonstruo> listaDeMonstruos = new ArrayList<CartaMonstruo>(); 
-		
-		for (Map.Entry<String, CartaMonstruo> entry: cartasMonstruos.entrySet()){
-			listaDeMonstruos.add(entry.getValue());
-		}
-		
-		return listaDeMonstruos;
-	}
-
-	public void removerMonstruo(String unNombreDeMonstruo){
-		
-		this.cartasMonstruos.remove(unNombreDeMonstruo);
-	}
-	
-	public void agujeroNegro() {
-		
-		this.cartasMonstruos.clear();
-		
-	}
 }

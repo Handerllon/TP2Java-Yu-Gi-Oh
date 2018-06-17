@@ -1,8 +1,10 @@
 package clases;
 
-public class ModoDefensa extends Modo {
+public class ModoDefensa extends Modo
+{
 
-	public ModoDefensa() {
-		
-	}
+    public ModoDefensa()
+    {
+
+    }
 }

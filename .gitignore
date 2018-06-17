@@ -9,3 +9,4 @@ TP2Java-Yu-Gi-Oh.iml
 *.jar
 .idea/ant.xml
 /bin/
+.idea/codeStyles/codeStyleConfig.xml

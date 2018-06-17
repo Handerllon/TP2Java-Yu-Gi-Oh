@@ -1,17 +1,17 @@
 package AlGoOh;
 
-import areaDeJuego.AreaDeJuego;
+import areaDeJuego.AreaDeCartas;
 import clases.Jugador;
 
 public class Tablero {
 	
-	private AreaDeJuego areaDeJuegoJugador1;
-	private AreaDeJuego areaDeJuegoJugador2;
+	private AreaDeCartas areaDeCartasJugador1;
+	private AreaDeCartas areaDeCartasJugador2;
 	
 	public Tablero (Jugador jugador, Jugador oponente){
 		
-		this.areaDeJuegoJugador1 = new AreaDeJuego (jugador);
-		this.areaDeJuegoJugador2 = new AreaDeJuego (oponente);
+		this.areaDeCartasJugador1 = new AreaDeCartas(jugador);
+		this.areaDeCartasJugador2 = new AreaDeCartas(oponente);
 		
 	}
 	

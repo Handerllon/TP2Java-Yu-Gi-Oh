@@ -1,25 +1,14 @@
 package areaDeJuego;
 
+import carta.Carta;
+
 import java.util.HashMap;
 
-import cartas.CartaDeCampo;
-
-public class RegionCampo {
-	
-	private HashMap <String, CartaDeCampo> cartasCampo;
-	
-
-public RegionCampo() {
-	
-	cartasCampo = new HashMap <String, CartaDeCampo>();
-
-	}
-
-
-public void colocarCarta(CartaDeCampo unaCartaDeCampo) {
-	
-	cartasCampo.put(unaCartaDeCampo.obtenerNombre(), unaCartaDeCampo);
-	
-	}
+public class RegionCampo extends Region
+{
+    public RegionCampo()
+    {
+        this.cartas = new HashMap<String, Carta>();
+    }
 
 }

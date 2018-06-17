@@ -1,6 +1,7 @@
 package clases;
 
-public abstract class Modo {
-	 
+public abstract class Modo
+{
+
 
 }

@@ -94,6 +94,7 @@ public class AlGoOhTest
         jugador.atacar(cartaJugador, cartaOponente);
 
         assertTrue(jugador.getPuntosDeVida() == (8000-2200));
+        assertTrue(jugador.cartaEstaEnCementerio(cartaJugador));
     }
 
     @Test

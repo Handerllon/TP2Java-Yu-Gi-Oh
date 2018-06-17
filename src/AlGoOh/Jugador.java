@@ -72,5 +72,10 @@ public class Jugador
         if (this.puntosDeVida <= 0)
             throw new JugadorSinVida();
     }
+
+    public boolean cartaEstaEnCementerio(CartaMonstruo cartaJugador)
+    {
+        return areaDeCartas.cartaEstaEnCementerio(cartaJugador.obtenerNombre());
+    }
 }
 

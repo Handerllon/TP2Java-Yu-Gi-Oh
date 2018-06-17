@@ -24,30 +24,24 @@ public class Tablero
 
     public void atacarOponente(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente)
     {
-        int puntosJugador;
-        int puntosOponente;
-        int diferenciaPuntos;
-
-        puntosJugador = cartaJugador.getPuntos();
-        puntosOponente = cartaOponente.getPuntos();
-        diferenciaPuntos = puntosJugador - puntosOponente;
+        int diferenciaPuntos = cartaJugador.getPuntos() - cartaOponente.getPuntos();
 
         if (cartaJugador.enAtaque() && cartaOponente.enAtaque())
         {
             if (diferenciaPuntos > 0)
             {
-                // cartaOponente al cementerio.
+                areaDeCartasOponente.mandarAlCementerio(cartaOponente);
                 oponente.restarVida(Math.abs(diferenciaPuntos));
             }
             if (diferenciaPuntos < 0)
             {
-                // cartaJugador al cementerio.
+                areaDeCartasJugador.mandarAlCementerio(cartaJugador);
                 jugador.restarVida(Math.abs(diferenciaPuntos));
             }
             if (diferenciaPuntos == 0)
             {
-                // cartaOponente al cementerio.
-                // cartaJugador al cementerio.
+                areaDeCartasOponente.mandarAlCementerio(cartaOponente);
+                areaDeCartasJugador.mandarAlCementerio(cartaJugador);
             }
         }
 
@@ -55,7 +49,7 @@ public class Tablero
         {
             if (diferenciaPuntos > 0)
             {
-                // cartaOponente al cementerio.
+                areaDeCartasOponente.mandarAlCementerio(cartaOponente);
             }
             if (diferenciaPuntos < 0)
             {

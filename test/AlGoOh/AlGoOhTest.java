@@ -79,17 +79,17 @@ public class AlGoOhTest
         Jugador jugador2 = new Jugador("J2");
 
         Tablero tableroJuego = new Tablero(jugador1, jugador2);
-        jugador1.agregarATablero(tableroJuego);
-        jugador2.agregarATablero(tableroJuego);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new CharcoalInpachi();
         cartaJugador1.cambiarModo();
-        jugador1.agregarAreaDeCartas(cartaJugador1);
+        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
         cartaJugador2.cambiarModo();
-        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == (8000-2200));
@@ -105,17 +105,17 @@ public class AlGoOhTest
         Jugador jugador2 = new Jugador("J2");
 
         Tablero tableroJuego = new Tablero(jugador1, jugador2);
-        jugador1.agregarATablero(tableroJuego);
-        jugador2.agregarATablero(tableroJuego);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
         cartaJugador1.cambiarModo();
-        jugador1.agregarAreaDeCartas(cartaJugador1);
+        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new CharcoalInpachi();
         cartaJugador2.cambiarModo();
-        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador2.getPuntosDeVida() == (8000-2200));
@@ -131,17 +131,17 @@ public class AlGoOhTest
         Jugador jugador2 = new Jugador("J2");
 
         Tablero tableroJuego = new Tablero(jugador1, jugador2);
-        jugador1.agregarATablero(tableroJuego);
-        jugador2.agregarATablero(tableroJuego);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
         cartaJugador1.cambiarModo();
-        jugador1.agregarAreaDeCartas(cartaJugador1);
+        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
         cartaJugador2.cambiarModo();
-        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
@@ -159,16 +159,16 @@ public class AlGoOhTest
         Jugador jugador2 = new Jugador("J2");
 
         Tablero tableroJuego = new Tablero(jugador1, jugador2);
-        jugador1.agregarATablero(tableroJuego);
-        jugador2.agregarATablero(tableroJuego);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new CharcoalInpachi();
-        jugador1.agregarAreaDeCartas(cartaJugador1);
+        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new GaiaTheFierceKnight();
         cartaJugador2.cambiarModo();
-        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
@@ -184,16 +184,16 @@ public class AlGoOhTest
         Jugador jugador2 = new Jugador("J2");
 
         Tablero tableroJuego = new Tablero(jugador1, jugador2);
-        jugador1.agregarATablero(tableroJuego);
-        jugador2.agregarATablero(tableroJuego);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
 
         CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
-        jugador1.agregarAreaDeCartas(cartaJugador1);
+        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
         tableroJuego.cambiarTurno();
 
         CartaMonstruo cartaJugador2 = new CharcoalInpachi();
         cartaJugador2.cambiarModo();
-        jugador2.agregarAreaDeCartas(cartaJugador2);
+        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
@@ -205,8 +205,32 @@ public class AlGoOhTest
     @Test
     public void test11SeJuegaAgujeroNegroYMuerenTodosLosMonstruosDeAmbasRegionesYLosPuntosDeVidaQuedanIguales()
     {
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
-    }/*Colocar monstruo en ambos lados del campo. Colocar Agujero negro boca arriba
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
+
+        CartaMonstruo cartaJugador1 = new GaiaTheFierceKnight();
+        jugador1.agregarCartaAAreaDeCartas(cartaJugador1);
+        tableroJuego.cambiarTurno();
+
+        CartaMonstruo cartaJugador2 = new CharcoalInpachi();
+        jugador2.agregarCartaAAreaDeCartas(cartaJugador2);
+        tableroJuego.cambiarTurno();
+
+        CartaMagica cartaMagicaJugador1 = new DarkHole();
+        cartaMagicaJugador1.cambiarOrientacion();
+        jugador1.agregarCartaAAreaDeCartas(cartaMagicaJugador1);
+
+        assertTrue(jugador1.cartaEstaEnCementerio(cartaJugador1));
+        assertTrue(jugador2.cartaEstaEnCementerio(cartaJugador2));
+
+        assertTrue(jugador1.getPuntosDeVida() == 8000);
+        assertTrue(jugador2.getPuntosDeVida() == 8000);
+
+    }/*Colocar monstruos en ambos lados del campo. Colocar Agujero negro boca arriba
             (es decir, se activa el efecto). Verificar que se destruyeron todos los monstruo de
     ambos lados del campo, y que nadie recibió daño alguno.*/
 

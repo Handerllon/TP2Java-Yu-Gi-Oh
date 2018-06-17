@@ -1,7 +1,8 @@
 package carta.magica;
 
 import carta.Carta;
+import carta.Efecto;
 
-public class CartaMagica extends Carta
+public abstract class CartaMagica extends Carta implements Efecto
 {
 }

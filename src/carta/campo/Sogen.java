@@ -1,12 +1,11 @@
 package carta.campo;
 
+import AreaDeJuego.Tablero;
 import carta.Efecto;
 
 public class Sogen extends CartaCampo implements Efecto
 {
-    @Override
-    public void efecto()
+    public void efecto(Tablero tablero)
     {
-
     }
 }

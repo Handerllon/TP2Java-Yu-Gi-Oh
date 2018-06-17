@@ -2,7 +2,10 @@ package AreaDeJuego;
 
 import AlGoOh.Jugador;
 import carta.Carta;
+import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;
+
+import java.util.ArrayList;
 
 public class AreaDeCartas
 {
@@ -36,9 +39,18 @@ public class AreaDeCartas
 
     }
 
-    public void mandarAlCementerio(Carta carta)
+    public void enviarAlCementerio(Carta carta)
     {
         this.cementerio.colocarCarta(carta);
+    }
+
+    public void enviarTodosMonstruosAlCementerio()
+    {
+        ArrayList<Carta> cartas = this.regionMonstruos.obtenerCartas();
+
+        cartas.forEach(item -> this.enviarAlCementerio(item));
+
+        this.regionMonstruos.removerTodasLasCartas();
     }
 
     public boolean cartaEstaEnCementerio(String unNombreDeCarta)
@@ -50,5 +62,11 @@ public class AreaDeCartas
     {
         regionMonstruos.colocarCarta(carta);
     }
+
+    public void agregarCarta(CartaMagica cartaJugador)
+    {
+        regionMagicasYTrampas.colocarCarta(cartaJugador);
+    }
+
 
 }

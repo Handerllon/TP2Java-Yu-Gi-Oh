@@ -43,4 +43,9 @@ public class Region
 
         return listaDeCartas;
     }
+
+    public void removerTodasLasCartas()
+    {
+        cartas.clear();
+    }
 }

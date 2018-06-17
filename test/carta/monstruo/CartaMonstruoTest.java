@@ -1,13 +1,12 @@
 package carta.monstruo;
 
 
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class CartaMonstruoTest
 {
-    private static final double DELTA = 1e-2;
-
     @Test
     public void test01CartaMonstruoTienePuntosDeAtaqueCorrectos()
     {
@@ -17,7 +16,7 @@ public class CartaMonstruoTest
     }
 
     @Test
-    public void test01CartaMonstruoTienePuntosDeDefensaCorrectos()
+    public void test02CartaMonstruoTienePuntosDeDefensaCorrectos()
     {
         CartaMonstruo carta = new GaiaTheFierceKnight();
         carta.cambiarModo();
@@ -25,4 +24,18 @@ public class CartaMonstruoTest
         assertTrue(carta.getPuntos() == 2300);
     }
 
+    @Test
+    public void test03CartaMonstruoTieneOrientacionInicialHaciaAbajo()
+    {
+        CartaMonstruo carta = new GaiaTheFierceKnight();
+        assertTrue(carta.orientacionAbajo());
+    }
+
+    @Test
+    public void test04CartaMonstruoCambiaHorientacionHaciaArribaYQuedaHaciaArriba()
+    {
+        CartaMonstruo carta = new GaiaTheFierceKnight();
+        carta.cambiarOrientacion();
+        assertTrue(carta.orientacionArriba());
+    }
 }

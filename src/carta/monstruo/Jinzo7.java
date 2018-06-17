@@ -1,12 +1,11 @@
 package carta.monstruo;
 
+import AreaDeJuego.Tablero;
 import carta.Efecto;
 
 public class Jinzo7 extends CartaMonstruo implements Efecto
 {
-    @Override
-    public void efecto()
+    public void efecto(Tablero tablero)
     {
-
     }
 }

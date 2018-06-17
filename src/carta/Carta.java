@@ -17,8 +17,21 @@ public class Carta
         return nombre;
     }
 
-    public void establecerOrientacion(Orientacion orientacion)
+    public void establecerOrientacion(Orientacion orientacionNueva)
     {
-        this.orientacion = orientacion;
+        this.orientacion = orientacionNueva;
+    }
+
+    public void cambiarOrientacion()
+    {
+        this.orientacion.cambiarOrientacion(this);
+    }
+
+    public boolean orientacionArriba(){
+        return this.orientacion instanceof OrientacionArriba;
+    }
+
+    public boolean orientacionAbajo(){
+        return this.orientacion instanceof OrientacionAbajo;
     }
 }

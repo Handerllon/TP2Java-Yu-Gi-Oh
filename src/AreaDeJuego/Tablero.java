@@ -1,6 +1,7 @@
 package AreaDeJuego;
 
 import AlGoOh.Jugador;
+import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;
 
 public class Tablero
@@ -43,18 +44,18 @@ public class Tablero
         {
             if (diferenciaPuntos > 0)
             {
-                areaDeCartasOponente.mandarAlCementerio(cartaOponente);
+                areaDeCartasOponente.enviarAlCementerio(cartaOponente);
                 oponente.restarVida(Math.abs(diferenciaPuntos));
             }
             if (diferenciaPuntos < 0)
             {
-                areaDeCartasJugador.mandarAlCementerio(cartaJugador);
+                areaDeCartasJugador.enviarAlCementerio(cartaJugador);
                 jugador.restarVida(Math.abs(diferenciaPuntos));
             }
             if (diferenciaPuntos == 0)
             {
-                areaDeCartasOponente.mandarAlCementerio(cartaOponente);
-                areaDeCartasJugador.mandarAlCementerio(cartaJugador);
+                areaDeCartasOponente.enviarAlCementerio(cartaOponente);
+                areaDeCartasJugador.enviarAlCementerio(cartaJugador);
             }
         }
 
@@ -62,7 +63,7 @@ public class Tablero
         {
             if (diferenciaPuntos > 0)
             {
-                areaDeCartasOponente.mandarAlCementerio(cartaOponente);
+                areaDeCartasOponente.enviarAlCementerio(cartaOponente);
             }
             if (diferenciaPuntos < 0)
             {
@@ -74,4 +75,21 @@ public class Tablero
             }
         }
     }
+
+    public void activarEfectoCartaMagica(CartaMagica cartaJugador)
+    {
+        cartaJugador.efecto(this);
+    }
+
+    public void destruirMonstruosJugador()
+    {
+        areaDeCartasJugador.enviarTodosMonstruosAlCementerio();
+    }
+
+    public void destruirMonstruosOponente()
+    {
+        areaDeCartasOponente.enviarTodosMonstruosAlCementerio();
+    }
+
+
 }

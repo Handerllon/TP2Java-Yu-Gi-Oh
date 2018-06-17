@@ -5,6 +5,7 @@ import AreaDeJuego.AreaDeCartas;
 import AreaDeJuego.Tablero;
 import carta.Mano;
 import carta.Mazo;
+import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;
 
 public class Jugador
@@ -40,7 +41,7 @@ public class Jugador
 
     }
 
-    public void agregarATablero(Tablero tablero)
+    public void definirTablero(Tablero tablero)
     {
         this.tablero = tablero;
     }
@@ -50,22 +51,6 @@ public class Jugador
         return this.puntosDeVida;
     }
 
-    public AreaDeCartas areaDeCartas()
-    {
-        return this.areaDeCartas;
-    }
-
-
-    public void agregarAreaDeCartas(CartaMonstruo cartaJugador)
-    {
-        areaDeCartas.agregarCarta(cartaJugador);
-    }
-
-    public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente)
-    {
-        tablero.atacarOponente(cartaJugador, cartaOponente);
-    }
-
     public void restarVida(int puntosARestar)
     {
         this.puntosDeVida -= puntosARestar;
@@ -73,9 +58,33 @@ public class Jugador
             throw new JugadorSinVida();
     }
 
+    public AreaDeCartas areaDeCartas()
+    {
+        return this.areaDeCartas;
+    }
+
+
+    public void agregarCartaAAreaDeCartas(CartaMonstruo cartaJugador)
+    {
+        areaDeCartas.agregarCarta(cartaJugador);
+    }
+
+    public void agregarCartaAAreaDeCartas(CartaMagica cartaJugador)
+    {
+        areaDeCartas.agregarCarta(cartaJugador);
+        if(cartaJugador.orientacionArriba()){
+            tablero.activarEfectoCartaMagica(cartaJugador);
+        }
+    }
+
     public boolean cartaEstaEnCementerio(CartaMonstruo cartaJugador)
     {
         return areaDeCartas.cartaEstaEnCementerio(cartaJugador.obtenerNombre());
+    }
+
+    public void atacar(CartaMonstruo cartaJugador, CartaMonstruo cartaOponente)
+    {
+        tablero.atacarOponente(cartaJugador, cartaOponente);
     }
 }
 

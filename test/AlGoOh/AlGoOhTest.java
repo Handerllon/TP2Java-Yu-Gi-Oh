@@ -262,7 +262,27 @@ public class AlGoOhTest
     @Test
     public void test13()
     {
-        assertTrue(0 == 0);
+    	Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
+
+        Tablero tableroJuego = new Tablero(jugador1, jugador2);
+        jugador1.definirTablero(tableroJuego);
+        jugador2.definirTablero(tableroJuego);
+
+        CartaMonstruo carta1Jugador1 = new CharcoalInpachi();
+        jugador1.agregarCarta(carta1Jugador1, new SacrificioNulo());
+        CartaMonstruo carta2Jugador1 = new Bitron();
+        jugador1.agregarCarta(carta2Jugador1, new SacrificioNulo());
+
+        CartaMonstruo carta3Jugador1 = new BlueEyesWhiteDragon();
+        Sacrificio sacrificios = new Sacrificio();
+        sacrificios.agregar(carta1Jugador1);
+        sacrificios.agregar(carta2Jugador1);
+        jugador1.agregarCarta(carta3Jugador1,sacrificios);
+
+        assertTrue(jugador1.cartaEstaEnCementerio(carta1Jugador1));
+        assertTrue(jugador1.cartaEstaEnCementerio(carta2Jugador1));
+        assertTrue(jugador1.cartaEstaEnRegionMonstruos(carta3Jugador1));
     }/*Se colocan 2 monstruo en el campo, se quiere colocar un monstruo de 7 o más
     estrellas que requiere 2 sacrificios. se verifica que se convocó al monstruo y se
     destruyeron los demás.*/

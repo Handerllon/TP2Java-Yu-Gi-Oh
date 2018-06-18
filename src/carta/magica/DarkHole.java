@@ -1,6 +1,6 @@
 package carta.magica;
 
-import AreaDeJuego.Tablero;
+import areaDeJuego.Tablero;
 import carta.Efecto;
 
 public class DarkHole extends CartaMagica implements Efecto

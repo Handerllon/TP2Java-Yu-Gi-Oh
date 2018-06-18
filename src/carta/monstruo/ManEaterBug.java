@@ -1,13 +1,13 @@
 package carta.monstruo;
 
-import AreaDeJuego.Tablero;
+import areaDeJuego.Tablero;
 import carta.Efecto;
 import carta.ModoDefensa;
 
 public class ManEaterBug extends CartaMonstruo implements Efecto
 {
-	
-	public ManEaterBug()
+
+    public ManEaterBug()
     {
         this.puntosAtaque = 450;
         this.puntosDefensa = 600;
@@ -16,7 +16,7 @@ public class ManEaterBug extends CartaMonstruo implements Efecto
 
         this.modo = new ModoDefensa(this.puntosDefensa);
     }
-	
+
     public void efecto(Tablero tablero)
     {
     }

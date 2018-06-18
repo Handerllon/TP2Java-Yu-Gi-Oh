@@ -1,9 +1,9 @@
 package AlGoOh;
 
-import AreaDeJuego.Cementerio;
-import AreaDeJuego.RegionCampo;
-import AreaDeJuego.RegionMonstruos;
-import AreaDeJuego.Tablero;
+import areaDeJuego.Cementerio;
+import areaDeJuego.RegionCampo;
+import areaDeJuego.RegionMonstruos;
+import areaDeJuego.Tablero;
 import carta.Sacrificio;
 import carta.SacrificioNulo;
 import carta.magica.CartaMagica;

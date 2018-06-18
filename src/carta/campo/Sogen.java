@@ -1,6 +1,6 @@
 package carta.campo;
 
-import AreaDeJuego.Tablero;
+import areaDeJuego.Tablero;
 import carta.Efecto;
 
 public class Sogen extends CartaCampo implements Efecto

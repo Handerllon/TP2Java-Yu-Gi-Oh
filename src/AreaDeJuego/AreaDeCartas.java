@@ -1,8 +1,8 @@
-package AreaDeJuego;
+package areaDeJuego;
 
 import AlGoOh.Jugador;
-import AreaDeJuego.excepciones.RegionMagicasYTrampasSinEspacioLibre;
-import AreaDeJuego.excepciones.RegionMonstruoSinEspacioLibre;
+import areaDeJuego.excepciones.RegionMagicasYTrampasSinEspacioLibre;
+import areaDeJuego.excepciones.RegionMonstruoSinEspacioLibre;
 import carta.Carta;
 import carta.magica.CartaMagica;
 import carta.monstruo.CartaMonstruo;

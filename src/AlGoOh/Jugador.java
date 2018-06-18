@@ -1,8 +1,8 @@
 package AlGoOh;
 
 import AlGoOh.excepciones.JugadorSinVida;
-import AreaDeJuego.AreaDeCartas;
-import AreaDeJuego.Tablero;
+import areaDeJuego.AreaDeCartas;
+import areaDeJuego.Tablero;
 import carta.Mano;
 import carta.Mazo;
 import carta.Sacrificio;

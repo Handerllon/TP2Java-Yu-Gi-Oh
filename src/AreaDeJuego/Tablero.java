@@ -1,4 +1,4 @@
-package AreaDeJuego;
+package areaDeJuego;
 
 import AlGoOh.Jugador;
 import carta.Sacrificio;

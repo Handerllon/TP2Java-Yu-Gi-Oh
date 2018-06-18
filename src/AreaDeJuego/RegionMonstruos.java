@@ -1,4 +1,4 @@
-package AreaDeJuego;
+package areaDeJuego;
 
 import carta.Carta;
 

@@ -1,6 +1,6 @@
 package carta;
 
-import AreaDeJuego.Tablero;
+import areaDeJuego.Tablero;
 
 public interface Efecto
 {

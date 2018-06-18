@@ -1,6 +1,6 @@
 package carta.monstruo;
 
-import AreaDeJuego.Tablero;
+import areaDeJuego.Tablero;
 import carta.Efecto;
 import carta.ModoDefensa;
 

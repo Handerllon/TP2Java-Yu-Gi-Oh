@@ -1,6 +1,6 @@
 package AlGoOh;
 
-import AreaDeJuego.Tablero;
+import areaDeJuego.Tablero;
 
 public class AlGoOh
 {

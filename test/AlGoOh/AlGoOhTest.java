@@ -196,6 +196,7 @@ public class AlGoOhTest
         jugador2.atacar(cartaJugador2,cartaJugador1);
 
         assertTrue(jugador1.getPuntosDeVida() == 8000);
+        assertTrue(jugador2.getPuntosDeVida() == (8000-2000));
 
         assertFalse(jugador1.cartaEstaEnCementerio(cartaJugador1));
         assertFalse(jugador2.cartaEstaEnCementerio(cartaJugador2));

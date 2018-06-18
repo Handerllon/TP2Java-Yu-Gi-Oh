@@ -49,16 +49,20 @@ public class Tablero
             {
                 areaDeCartasOponente.enviarAlCementerio(cartaOponente);
                 oponente.restarVida(Math.abs(diferenciaPuntos));
+                areaDeCartasOponente.removerCarta(cartaOponente);
             }
             if (diferenciaPuntos < 0)
             {
                 areaDeCartasJugador.enviarAlCementerio(cartaJugador);
                 jugador.restarVida(Math.abs(diferenciaPuntos));
+                areaDeCartasJugador.removerCarta(cartaJugador);
             }
             if (diferenciaPuntos == 0)
             {
                 areaDeCartasOponente.enviarAlCementerio(cartaOponente);
                 areaDeCartasJugador.enviarAlCementerio(cartaJugador);
+                areaDeCartasJugador.removerCarta(cartaJugador);
+                areaDeCartasOponente.removerCarta(cartaOponente);
             }
         }
 
@@ -67,6 +71,7 @@ public class Tablero
             if (diferenciaPuntos > 0)
             {
                 areaDeCartasOponente.enviarAlCementerio(cartaOponente);
+                areaDeCartasOponente.removerCarta(cartaOponente);
             }
             if (diferenciaPuntos < 0)
             {
